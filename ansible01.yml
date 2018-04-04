@@ -1,0 +1,61 @@
+- name: Create Azure VM             
+  hosts: localhost                  
+  connection: local                 
+  gather_facts: false               
+  tasks:                            
+  - name: Create a resource group   
+    azure_rm_resourcegroup:         
+      name: admillerTestRG          
+      location: eastus              
+  - name: Create virtual network    
+    azure_rm_virtualnetwork:        
+      resource_group: admillerTestRG                                    
+      name: admillerTestVNet        
+      address_prefixes: "10.0.0.0/16"                                   
+  - name: Add subnet                
+    azure_rm_subnet:                
+      resource_group: admillerTestRG                                    
+      name: admillerTestSubnet      
+      address_prefix: "10.0.1.0/24" 
+      virtual_network: admillerTestVNet                                 
+  - name: Create public IP address  
+    azure_rm_publicipaddress:       
+      resource_group: admillerTestRG                                    
+      allocation_method: Static     
+      name: admillerTestPublicIP    
+  - name: Create Network Security Group that allows SSH                 
+    azure_rm_securitygroup:         
+      resource_group: admillerTestRG                                    
+      name: admillerTestNetSecGroup 
+      rules:                        
+        - name: SSH                 
+          protocol: Tcp             
+          destination_port_range: 22                                    
+          access: Allow             
+          priority: 1001            
+          direction: Inbound        
+  - name: Create virtual network inteface card                          
+    azure_rm_networkinterface:      
+      resource_group: admillerTestRG                                    
+      name: admillerTestNIC         
+      virtual_network: admillerTestVNet                                 
+      subnet: admillerTestSubnet    
+      public_ip_name: admillerTestPublicIP                              
+      security_group: admillerTestNetSecGroup                           
+  - name: Create VM                 
+    azure_rm_virtualmachine:        
+      resource_group: admillerTestRG                                    
+      name: admillerTestCentOSVM    
+      vm_size: Standard_DS1_v2      
+      admin_username: azureuser     
+      ssh_password_enabled: false   
+      managed_disk_type: Premium_LRS                                    
+      network_interfaces: admillerTestNIC                               
+      ssh_public_keys:              
+        - path: /home/azureuser/.ssh/authorized_keys                    
+          key_data: "ssh-rsa AAAA...."
+      image:                        
+        offer: CentOS               
+        publisher: OpenLogic        
+        sku: '7.4'                  
+        version: latest
