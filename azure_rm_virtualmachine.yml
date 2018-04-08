@@ -1,0 +1,14 @@
+- azure_rm_virtualmachine:
+    resource_group: mdrg1
+    name: mdvm1-managed
+    state: present
+    vm_size: Standard_A0
+    managed_disk_type: Standard_LRS
+    admin_username: mdavis
+    admin_password: password123!
+    image: { "offer": "UbuntuServer","publisher": "Canonical", "sku": "16.04-LTS", "version": "latest" }
+
+- azure_rm_virtualmachine:
+    resource_group: mdrg1
+    name: mdvm1-managed
+    state: absent
