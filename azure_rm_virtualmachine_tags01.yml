@@ -1,4 +1,5 @@
 ---
+# Resource Group, NIC, subnet,virtual network and publick IP has existed
 - name: "create and update the tags on a VM"
   hosts: localhost
   vars: 
@@ -7,11 +8,6 @@
     vmname: myVM04
 
   tasks: 
-  - name: Create Resource Group
-    azure_rm_resourcegroup:
-      name: "{{ rg }}"
-      location: "{{ location }}"
-
   - name: Create {{vmname}} VM 
     azure_rm_virtualmachine:
       resource_group: '{{ rg }}'
