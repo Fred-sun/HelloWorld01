@@ -1,0 +1,28 @@
+---
+- name: "create and update the tags on a VM"
+  hosts: localhost
+  tasks: 
+  - name: Create {{vmname}} VM 
+    azure_rm_virtualmachine:
+      resource_group: '{{ rg }}'
+      name: '{{vmname}}'
+      vm_size: Standard_DS1_v2
+      admin_username: yoda
+      admin_password: do0rDoNot
+      image:
+        offer: UbuntuServer
+        publisher: Canonical
+        sku: '16.04-LTS'
+        version: latest
+      append_tags: no
+      tags: 
+        'foo': 'bar'
+
+  - name: Append tags to {{vmname}}
+    azure_rm_virtualmachine:
+      resource_group: '{{ rg }}'
+      name: '{{vmname}}'
+      vm_size: Standard_DS1_v2
+      append_tags: yes
+      tags: 
+        'derp': 'snort'
