@@ -1,0 +1,34 @@
+fred@fred-Virtual-Machine:~/task$ ansible-playbook azure_rm_networkinterface_location01.yml 
+
+PLAY [For Azure learn] ****************************************************************************************
+
+TASK [Gathering Facts] ****************************************************************************************
+ok: [127.0.0.1]
+
+TASK [create resource group] **********************************************************************************
+changed: [127.0.0.1]
+
+TASK [create virtual network] *********************************************************************************
+changed: [127.0.0.1]
+
+TASK [Add subnet] *********************************************************************************************
+changed: [127.0.0.1]
+
+TASK [create public ip] ***************************************************************************************
+changed: [127.0.0.1]
+
+TASK [Create security group that allows SSH] ******************************************************************
+changed: [127.0.0.1]
+
+TASK [Create NIC] *********************************************************************************************
+[DEPRECATION WARNING]: Setting ip_configuration flatten is deprecated and will be removed. Using 
+ip_configurations list to define the ip configuration. This feature will be removed in version 2.9. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+changed: [127.0.0.1]
+
+TASK [Create virtual machine] *********************************************************************************
+fatal: [127.0.0.1]: FAILED! => {"changed": false, "msg": "Error creating or updating virtual machine vm-klltest02 - Azure Error: SkuNotAvailable\nMessage: The requested size for resource '/subscriptions/2085065b-00f8-4cba-9675-ba15f4d4ab66/resourceGroups/klltest-rg11/providers/Microsoft.Compute/virtualMachines/vm-klltest02' is currently not available in location 'eastus2' zones '' for subscription '2085065b-00f8-4cba-9675-ba15f4d4ab66'. Please try another size or deploy to a different location or zones. See https://aka.ms/azureskunotavailable for details."}
+	to retry, use: --limit @/home/fred/task/azure_rm_networkinterface_location01.retry
+
+PLAY RECAP ****************************************************************************************************
+127.0.0.1                  : ok=7    changed=6    unreachable=0    failed=1 
