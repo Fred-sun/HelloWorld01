@@ -1,0 +1,93 @@
+----
+- name: demonstrate azure_rm_dnsrecordset TXT record issue
+  hosts: localhost
+  connection: local
+  gather_facts: False
+
+  vars:
+    az_resource_group: Testing
+    az_location: ukwest
+    az_dnszone: 'test.uk'
+
+
+  tasks:
+
+    - name: create resource group
+      azure_rm_resourcegroup:
+        name: "{{ az_resource_group }}"
+        location: "{{ az_location }}"
+        state: present
+      register: azure_resourcegroup
+
+    - name: create a DNS zone
+      azure_rm_dnszone:
+        resource_group: "{{ az_resource_group }}"
+        name: "{{ az_dnszone }}"
+        state: present
+
+    - name: ensure an "A" record set with multiple records
+      azure_rm_dnsrecordset:
+        resource_group: "{{ az_resource_group }}"
+        relative_name: www
+        zone_name: "{{ az_dnszone }}"
+        record_type: A
+        state: present
+        records:
+          - entry: 192.168.100.101
+          - entry: 192.168.100.102
+          - entry: 192.168.100.103
+
+    - name: create TXT record in a new record set
+      azure_rm_dnsrecordset:
+        resource_group: "{{ az_resource_group }}"
+        relative_name: "mail.{{ az_dnszone }}"
+        zone_name: "{{ az_dnszone }}"
+        record_type: TXT
+        records:
+        - entry: 'v=spf1 a -all'--
+- name: demonstrate azure_rm_dnsrecordset TXT record issue
+  hosts: localhost
+  connection: local
+  gather_facts: False
+
+  vars:
+    az_resource_group: Testing
+    az_location: ukwest
+    az_dnszone: 'test.uk'
+
+
+  tasks:
+
+    - name: create resource group
+      azure_rm_resourcegroup:
+        name: "{{ az_resource_group }}"
+        location: "{{ az_location }}"
+        state: present
+      register: azure_resourcegroup
+
+    - name: create a DNS zone
+      azure_rm_dnszone:
+        resource_group: "{{ az_resource_group }}"
+        name: "{{ az_dnszone }}"
+        state: present
+
+    - name: ensure an "A" record set with multiple records
+      azure_rm_dnsrecordset:
+        resource_group: "{{ az_resource_group }}"
+        relative_name: www
+        zone_name: "{{ az_dnszone }}"
+        record_type: A
+        state: present
+        records:
+          - entry: 192.168.100.101
+          - entry: 192.168.100.102
+          - entry: 192.168.100.103
+
+    - name: create TXT record in a new record set
+      azure_rm_dnsrecordset:
+        resource_group: "{{ az_resource_group }}"
+        relative_name: "mail.{{ az_dnszone }}"
+        zone_name: "{{ az_dnszone }}"
+        record_type: TXT
+        records:
+        - entry: 'v=spf1 a -all'
