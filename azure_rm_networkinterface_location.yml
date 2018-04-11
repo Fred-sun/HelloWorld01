@@ -24,4 +24,5 @@
       offer: "CentOS"
       publisher: "OpenLogic"
       sku: "7.4"
+      :q
       version: "latest"

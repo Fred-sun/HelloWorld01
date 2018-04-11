@@ -1,0 +1,31 @@
+---
+- name: Start the template creation process (from scratch)
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  vars:
+    cloud_type: "{{ cloud_envs[cloud].type }}"
+
+  tasks:
+    - name: Create Azure VM with Ansible
+      azure_rm_virtualmachine:
+        admin_username: "{{ base_templates[cloud_type][template].admin_user }}"
+        admin_password: "{{ base_templates[cloud_type][template].admin_password }}"
+        client_id: "{{ cloud_envs[cloud].client_id }}"
+        image:
+          publisher: "{{ base_templates[cloud_type][template].image_publisher }}"
+          offer: "{{ base_templates[cloud_type][template].image_offer }}"
+          sku: "{{ base_templates[cloud_type][template].image_sku }}"
+          version: latest
+        location: "{{ base_templates[cloud_type][template].location }}"
+        name: "w2016-stage1"
+        os_type: "{{ base_templates[cloud_type][template].os_type }}"
+        resource_group: "{{ cloud_envs[cloud].resource_group_name }}"
+        secret: "{{ cloud_envs[cloud].client_secret }}"
+        state: present
+        storage_account_name: "{{ cloud_envs[cloud].storage_account }}"
+        virtual_network_name: voyager-templates
+        subscription_id: "{{ cloud_envs[cloud].subscription_id }}"
+        tenant: "{{ cloud_envs[cloud].tenant_id }}"
+        vm_size: "{{ base_templates[cloud_type][template].vm_size }}"
