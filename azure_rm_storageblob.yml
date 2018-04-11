@@ -1,11 +1,31 @@
-- name: Create a storage container and upload the image as a blob
+---
+- name: For Azure learn
+  hosts: localhost
+  connection: local
+  vars:
+    az_resource_group: myRG03
+    location: westeurope
+    az_storage_account_name: sssaaa03
+  tasks:
+  - name: create resource group
+    azure_rm_resourcegroup:
+      name: "{{ az_resource_group }}"
+      location: "{{ location }}"
+
+  - name: create storage account
+    azure_rm_storageaccount:
+      resource_group: "{{ az_resource_group }}"
+      name: "{{ az_storage_account_name }}"
+      account_type: Standard_LRS
+
+  - name: Create a storage container and upload the image as a blob
     azure_rm_storageblob:
       resource_group: '{{ az_resource_group }}'
       storage_account_name: '{{ az_storage_account_name }}'
-      container: '{{ az_storage_container }}'
-      blob: '{{ vhd_blob_image }}'
-      src: '{{ vhd_src_image }}'
+      container: foo
+      blob: graylog.png
+      src: ./graylog.png
       force: true
       public_access: container
-      content_type: 'page blob'
+      content_type: 'pape blob'
     register: result
