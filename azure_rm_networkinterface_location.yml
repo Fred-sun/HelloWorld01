@@ -18,6 +18,7 @@
       name: "{{ resource_group }}"
       location: "{{ location }}"
 
+<<<<<<< HEAD
   - name: create virtual network
     azure_rm_virtualnetwork:
       resource_group: "{{ resource_group }}"
@@ -76,3 +77,23 @@
         publisher: "OpenLogic"
         sku: "7.4"
         version: "latest"
+=======
+- name: Create virtual machine
+  azure_rm_virtualmachine:
+    resource_group: "{{ resource_group }}"
+    name: "{{ machine_name }}"
+    vm_size: Basic_A0
+    admin_username: deploy
+    ssh_password_enabled: false
+    ssh_public_keys:
+      - path: /home/deploy/.ssh/authorized_keys
+        key_data: "{{ public_key }}"
+    network_interfaces: "{{ machine_name }}-nic"
+    location: "East US 2"
+    image:
+      offer: "CentOS"
+      publisher: "OpenLogic"
+      sku: "7.4"
+      :q
+      version: "latest"
+>>>>>>> 632de35ac06ecb29d6ca03959dae303ab934406a

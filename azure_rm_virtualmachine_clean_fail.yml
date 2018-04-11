@@ -1,19 +1,24 @@
-'''
 ---
-# Resource_group and image has create before excute
-- name: For Azure learn
+- name: Start the template creation process (from scratch)
   hosts: localhost
   connection: local
+  gather_facts: false
   vars:
-    resource_group: myRG03
+    resource_group: myRG01
     location: westeurope
-    storageaccount: sssaaa04
-    virtualnetwork: virtualnetwork04
-    subnet: subnet04
-    public_ip: public_ip04
-    security_ssh: security_ssh04
-    test_nic: test_nic04
-    vm_name: myVM03
+    storageaccount: sssaaa01
+    virtualnetwork: virtualnetwork01
+    subnet: subnet01
+    public_ip: public_ip01
+    security_ssh: security_ssh01
+    test_nic: test_nic01
+    vm_name: w2016-stage10000001
+    username: azureuser
+    password: PassWord@0329
+    tenant_id: 72f988bf-86f1-41af-91ab-2d7cd011db47
+    sub_id: 2085065b-00f8-4cba-9675-ba15f4d4ab66
+    secret: 531dcffa-3aff-4488-99bb-4816c395ea3f
+    client_id: eec5624a-90f8-4386-8a87-02730b5410d5
   tasks:
   - name: create resource group
     azure_rm_resourcegroup:
@@ -66,24 +71,24 @@
       public_ip_name: "{{ public_ip}}"
       security_group: "{{ security_ssh }}"
 
-  - name: create virtual machine
-    azure_rm_virtualmachine: 
-      resource_group: "{{ resource_group }}"
-      name: "{{ vm_name }}"
-      state: present
-      vm_size: Standard_A0
-      managed_disk_type: Standard_LRS
-      admin_username: azureuser
-      admin_password: Password@0329
-      image: 
-        offer: UbuntuServer
-        publisher: Canonical
-        sku: 16.04-LTS 
-        version: latest 
-
-  - name: delete all auto create resource
+  - name: Create Azure VM with Ansible
     azure_rm_virtualmachine:
-      resource_group: "{{ resource_group }}"
+      admin_username: "{{ username }}"
+      admin_password: "{{ password }}"
+#      client_id: "{{ client_id }}"
+      image:
+        publisher: Canonical
+        offer: UbuntuServer
+        sku: 16.04-LTS
+        version: latest
+      location: "{{ location }}"
       name: "{{ vm_name }}"
-      state: absent
-'''
+      os_type: Linux 
+      resource_group: "{{ resource_group }}"
+#      secret: "{{ secret }}"
+      state: present
+      storage_account_name: "{{ storageaccount }}"
+      virtual_network_name: "{{ virtualnetwork }}"
+#      subscription_id: "{{ sub_id }}"
+#      tenant: "{{ tenant_id }}"
+      vm_size: Standard_A0
