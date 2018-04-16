@@ -1,4 +1,5 @@
--- name: Create infra
+---
+- name: Create infra
   hosts: localhost
   gather_facts: False
 
@@ -13,7 +14,9 @@
           team: myteam
           tier: mytier
       register: reg_rg
-
+    - name: dump reg_rg
+      debug:
+       var: reg_rg
   #
   # after this task the tags *do* exist on the Resource Group
   #
@@ -23,41 +26,11 @@
         deployment_name: registry
         resource_group_name: '{{ reg_rg.state.name }}'
         location: '{{ reg_rg.state.location }}'
-        template: "{{ lookup('file', './azuredeploy.json') }}"
-        parameters: "{{ lookup('file', './azuredeploy.parameters.json') }}"
+        template: "{{ lookup('file', './azuredeploy01.json') }}"
+#        template_link: 'https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-simple-linux/azuredeploy.json'
+#        parameters_link: 'https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-simple-linux/azuredeploy.parameters.json'
         wait_for_deployment_completion: False
 
   #
   # after this task they *don't*
-  # name: Create infra
-  hosts: localhost
-  gather_facts: False
-
-  tasks:
-
-
-    - name: Create resource group
-      azure_rm_resourcegroup:
-        name: foobar
-        location: westeurope
-        tags:
-          team: myteam
-          tier: mytier
-      register: reg_rg
-
-  #
-  # after this task the tags *do* exist on the Resource Group
-  #
-
-    - name: Deploy Docker registry
-      azure_rm_deployment:
-        deployment_name: registry
-        resource_group_name: '{{ reg_rg.state.name }}'
-        location: '{{ reg_rg.state.location }}'
-        template: "{{ lookup('file', './azuredeploy.json') }}"
-        parameters: "{{ lookup('file', './azuredeploy.parameters.json') }}"
-        wait_for_deployment_completion: False
-
-  #
-  # after this task they *don't*
-  #
+  # 
