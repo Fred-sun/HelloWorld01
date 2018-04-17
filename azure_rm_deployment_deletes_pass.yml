@@ -1,0 +1,36 @@
+---
+- name: Create infra
+  hosts: localhost
+  gather_facts: False
+
+  tasks:
+    - name: Create resource group
+      azure_rm_resourcegroup:
+        name: foobar1
+        location: westeurope
+        tags:
+          team: myteam
+          tier: mytier
+          tiger: mytiger
+      register: reg_rg
+    - name: dump reg_rg
+      debug:
+       var: reg_rg
+
+    - name: Create Azure Servers
+      azure_rm_deployment:
+        deployment_name: registry
+#        profile: "default"
+        resource_group_name: '{{ reg_rg.state.name }}'
+        location: '{{ reg_rg.state.location }}'
+        template: "{{ lookup('file', './azuredeploy_vm.json') }}"
+#        parameters: "{{ lookup('template', item) }}"
+      parameters:
+        newStorageAccountName:
+          value: devopsclestorage
+        adminUsername:
+          value: devopscle
+        adminPassword:
+          value: Password1!
+        dnsNameForPublicIP:
+          value: devopscleazure
