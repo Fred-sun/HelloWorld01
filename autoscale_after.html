@@ -1,0 +1,133 @@
+TASK [dump auto scale facts before delete check mode] **************************
+ok: [localhost]
+
+TASK [debug] *******************************************************************
+ok: [localhost] => {
+    "output3": {
+        "autoscales": [
+            {
+                "enabled": true, 
+                "id": "/subscriptions/2085065b-00f8-4cba-9675-ba15f4d4ab66/resourceGroups/myRG06/providers/microsoft.insights/autoscalesettings/fretscale", 
+                "location": "eastus", 
+                "name": "fretscale", 
+                "notifications": [], 
+                "profiles": [
+                    {
+                        "count": "1", 
+                        "max_count": "1", 
+                        "min_count": "1", 
+                        "name": "Auto created scale condition 0", 
+                        "recurrence_days": [
+                            "Monday"
+                        ], 
+                        "recurrence_frequency": "Week", 
+                        "recurrence_hours": [
+                            "6"
+                        ], 
+                        "recurrence_mins": [
+                            "0"
+                        ], 
+                        "recurrence_timezone": "China Standard Time", 
+                        "rules": [
+                            {
+                                "cooldown": 5.0, 
+                                "direction": "Increase", 
+                                "metric_name": "Percentage CPU", 
+                                "metric_resource_uri": "/subscriptions/2085065b-00f8-4cba-9675-ba15f4d4ab66/resourceGroups/myRG06/providers/Microsoft.Compute/virtualMachineScaleSets/testVMSSfredtest", 
+                                "operator": "GreaterThan", 
+                                "statistic": "Average", 
+                                "threshold": 70.0, 
+                                "time_aggregation": "Average", 
+                                "time_grain": 1.0, 
+                                "time_window": 10.0, 
+                                "type": "ChangeCount", 
+                                "value": "1"
+                            }
+                        ]
+                    }
+                ], 
+                "tags": {
+                    "$type": "Microsoft.WindowsAzure.Management.Common.Storage.CasePreservedDictionary, Microsoft.WindowsAzure.Management.Common.Storage"
+                }, 
+                "target": "/subscriptions/2085065b-00f8-4cba-9675-ba15f4d4ab66/resourceGroups/myRG06/providers/Microsoft.Compute/virtualMachineScaleSets/testVMSSfredtest"
+            }
+        ], 
+        "changed": false, 
+        "failed": false, 
+        "warnings": [
+            "Azure API profile latest does not define an entry for MonitorManagementClient"
+        ]
+    }
+}
+
+TASK [delete auto scaling (check mode)] ****************************************
+changed: [localhost]
+
+TASK [assert] ******************************************************************
+ok: [localhost] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [dump auto scale facts after delete check mode] ***************************
+ok: [localhost]
+
+TASK [debug] *******************************************************************
+ok: [localhost] => {
+    "output4": {
+        "autoscales": [
+            {
+                "enabled": true, 
+                "id": "/subscriptions/2085065b-00f8-4cba-9675-ba15f4d4ab66/resourceGroups/myRG06/providers/microsoft.insights/autoscalesettings/fretscale", 
+                "location": "eastus", 
+                "name": "fretscale", 
+                "notifications": [], 
+                "profiles": [
+                    {
+                        "count": "1", 
+                        "max_count": "1", 
+                        "min_count": "1", 
+                        "name": "Auto created scale condition 0", 
+                        "recurrence_days": [
+                            "Monday"
+                        ], 
+                        "recurrence_frequency": "Week", 
+                        "recurrence_hours": [
+                            "6"
+                        ], 
+                        "recurrence_mins": [
+                            "0"
+                        ], 
+                        "recurrence_timezone": "China Standard Time", 
+                        "rules": [
+                            {
+                                "cooldown": 5.0, 
+                                "direction": "Increase", 
+                                "metric_name": "Percentage CPU", 
+                                "metric_resource_uri": "/subscriptions/2085065b-00f8-4cba-9675-ba15f4d4ab66/resourceGroups/myRG06/providers/Microsoft.Compute/virtualMachineScaleSets/testVMSSfredtest", 
+                                "operator": "GreaterThan", 
+                                "statistic": "Average", 
+                                "threshold": 70.0, 
+                                "time_aggregation": "Average", 
+                                "time_grain": 1.0, 
+                                "time_window": 10.0, 
+                                "type": "ChangeCount", 
+                                "value": "1"
+                            }
+                        ]
+                    }
+                ], 
+                "tags": {
+                    "$type": "Microsoft.WindowsAzure.Management.Common.Storage.CasePreservedDictionary, Microsoft.WindowsAzure.Management.Common.Storage"
+                }, 
+                "target": "/subscriptions/2085065b-00f8-4cba-9675-ba15f4d4ab66/resourceGroups/myRG06/providers/Microsoft.Compute/virtualMachineScaleSets/testVMSSfredtest"
+            }
+        ], 
+        "changed": false, 
+        "failed": false, 
+        "warnings": [
+            "Azure API profile latest does not define an entry for MonitorManagementClient"
+        ]
+    }
+}
+
