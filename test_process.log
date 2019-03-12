@@ -1,0 +1,17 @@
+    1  apt-get install ansible
+    2  python -m pip install git+https://github.com/ansible/ansible.git@devel
+    3  wget -O require.txt https://raw.githubusercontent.com/ansible/ansible/devel/packaging/requirements/requirements-azure.txt
+    4  python -m pip install -r require.txt
+    5  wget -O main.yml https://raw.githubusercontent.com/yuwzho/scripts/master/ansible/main.yml
+    6  wget -O task.yml https://raw.githubusercontent.com/ansible/ansible/devel/test/integration/targets/azure_rm_aks/tasks/main.yml
+    7  ls
+    8  cp task.yml test.yml
+    9  vi test.yml 
+   10  ansible-playbook main.yml --extra-vars "{\"test\":\"test.yml\",\"resource_group\":\"ansible-aks-test\"}"
+   11  export AZURE_SUBSCRIPTION_ID=f64d4ee8-be94-457d-ba26-3fa6b6506cef
+   12  export AZURE_CLIENT_ID=ae12946a-f4de-4609-a5d1-68c36604f3b0
+   13  export AZURE_SECRET=KcDB6CMlNn+MmtA+ZJv6xXmXQz+x2JRxGQBy6Dh6adw=
+   14  export AZURE_TENANT=72f988bf-86f1-41af-91ab-2d7cd011db47
+   15  ansible-playbook main.yml --extra-vars "{\"test\":\"test.yml\",\"resource_group\":\"ansible-aks-test\"}"
+   16  history
+
