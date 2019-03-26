@@ -1,0 +1,41 @@
+
+TASK [debug] *******************************************************************
+ok: [localhost] => {
+    "msg": {
+        "azure_aks_versions": [
+            "1.9.11", 
+            "1.9.10", 
+            "1.11.7", 
+            "1.11.8", 
+            "1.10.12", 
+            "1.10.13", 
+            "1.12.5", 
+            "1.12.6"
+        ], 
+        "changed": false, 
+        "failed": false, 
+        "warnings": [
+            "Azure API profile latest does not define an entry for ContainerServiceClient"
+        ]
+    }
+}
+
+TASK [Get available version] ***************************************************
+ok: [localhost]
+
+TASK [debug] *******************************************************************
+ok: [localhost] => {
+    "msg": {
+        "azure_aks_versions": [
+            "1.10.12", 
+            "1.10.13"
+        ], 
+        "changed": false, 
+        "failed": false, 
+        "warnings": [
+            "Azure API profile latest does not define an entry for ContainerServiceClient"
+        ]
+    }
+}
+
+
