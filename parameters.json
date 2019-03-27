@@ -1,0 +1,48 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "virtualMachines_myVM_name": {
+            "value": null
+        },
+        "networkInterfaces_myvm250_name": {
+            "value": null
+        },
+        "publicIPAddresses_myVM_ip_name": {
+            "value": null
+        },
+        "virtualNetworks_myRG_vnet_name": {
+            "value": null
+        },
+        "storageAccounts_myrgdiag956_name": {
+            "value": null
+        },
+        "networkSecurityGroups_myVM_nsg_name": {
+            "value": null
+        },
+        "virtualNetworks_vnet1efaa536716_name": {
+            "value": null
+        },
+        "managedClusters_azureuser_name": {
+            "value": null
+        },
+        "subnets_default_name": {
+            "value": null
+        },
+        "securityRules_SSH_name": {
+            "value": null
+        },
+        "virtualMachines_myVM_id": {
+            "value": null
+        },
+        "managedClusters_azureuser_logAnalyticsWorkspaceResourceID": {
+            "value": null
+        },
+        "virtualNetworks_myRG_vnet_id": {
+            "value": null
+        },
+        "subnets_default_id": {
+            "value": null
+        }
+    }
+}
