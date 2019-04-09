@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-# HelloWorld01
-For Learn github 
-Make and commit change
-=======
 # Solution name
 
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-container-registry%2Fazuredeploy.json" target="_blank">
@@ -49,4 +44,3 @@ Follow [this documentation](https://docs.microsoft.com/en-us/azure/container-reg
 For pushing docker images on your registry, follow [this documentation](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-get-started-docker-cli)
 
 
->>>>>>> 8b4199fa8f051ead640963dd9fc4044ce7309074

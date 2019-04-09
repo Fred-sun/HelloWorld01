@@ -1,0 +1,49 @@
+---
+# This playbook create an Azure VM with public IP
+# Change variables below to customize your VM deployment
+
+- name: Create Azure VM
+  hosts: localhost
+  connection: local
+  vars:
+    resource_group: myResourceGroup_demo
+    image_name: myImage
+    image_resource_group: myResourceGroup
+    network_interfaces: test_interfaces
+    vm_name: testvm01
+    location: eastus
+  tasks:
+  - name: Create a resource group
+    azure_rm_resourcegroup:
+        name: "{{ resource_group }}"
+        location: "{{ location }}"
+
+  - name: Create virtual network
+    azure_rm_virtualnetwork:
+      resource_group: "{{ resource_group }}"
+      name: "{{ vm_name }}"
+      address_prefixes: "10.0.0.0/16"
+
+#  - name: Add NIC
+
+  - name: Add subnet
+    azure_rm_subnet:
+      resource_group: "{{ resource_group }}"
+      name: "{{ vm_name }}"
+      address_prefix_cidr: "10.0.1.0/24"
+      virtual_network: "{{ vm_name }}"
+
+  - name: Create a VM with a custom image
+    azure_rm_virtualmachine:
+      resource_group: "{{ image_resource_group }}"
+      name: "{{ vm_name }}"
+      vm_size: Standard_DS1_v2
+      admin_username: azureuser
+      admin_password: Password@123
+      image:
+#        name: "{{ image_name }}"
+#        resource_group: "{{ image_resource_group }}"
+
+        name: myImage
+        resource_group: myResourceGroup
+
