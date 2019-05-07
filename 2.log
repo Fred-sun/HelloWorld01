@@ -1,822 +1,196 @@
-    1  sudo apt-get install pip
-    2  sudo apt-get install ansible
-    3  ping www.163.com
-    4  easy_install
-    5  sudo apt-get install python-setuptools
-    6  sudo chmod 777 create_Virtualmachine.yml 
-    7  exit
-    8  ifconfig
-    9  ssh 172.19.126.150
-   10  ssh 127.0.0.1
-   11  ssh 172.19.126.145
-   12  ssh v-xisu@microsoft.com@172.19.126.145
-   13  ssh-copy-id -i .ssh/id_rsa.pub 127.0.0.1
-   14  sudo pip install openssh
-   15  vi /etc/ssh/ssh_config 
-   16  ls
-   17  sudo apt-get install openssh-server
-   18  ssh 127.0.0.1
-   19  ssh-copy-id -i .ssh/id_rsa.pub 127.0.0.1
-   20  ssh 172.19.126.145
-   21  ssh-copy-id -i .ssh/id_rsa 52.232.7.202
-   22  sudo ssh-copy-id -i .ssh/id_rsa 52.232.7.202
-   23  vi /etc/ssh/ssh_config 
-   24  sudo vi /etc/ssh/ssh_config 
-   25  sudo ssh-copy-id -i .ssh/id_rsa 52.232.7.202
-   26  pip list
-   27  gedit create_Virtualmachine.yml 
-   28  sudo gedit create_Virtualmachine.yml 
-   29  geidt create_Virtualmachine_bac.yml 
-   30  gedit create_Virtualmachine_bac.yml 
-   31  exit
-   32  ls
-   33  exit
-   34  sudo gedit 123.yml
-   35  geidt create_Virtualmachine_bac.yml 
-   36  exit
-   37  ls
-   38  sudo gedit user.yml 
-   39  ansible-playbook user.yml 
-   40  vi user.yml 
-   41  mkdir helloworld
-   42  cd helloworld/
-   43  git clone https://github/Fred-sun/HelloWorld
-   44  git config
-   45  git login
-   46  git --help
-   47  git config
-   48  git config --global user.name fred
-   49  git config --global user.email "xiuxi.sun@qq.com"
-   50  git --global
-   51  git list
-   52  git show
-   53  git clone https://github/Fred-sun/HelloWorld
-   54  git clone https://github/Fred-sun/ansible01
-   55  ping https://github/Fred-sun/ansible01
-   56  git colone https://github/Fred-sun/ansible01
-   57  git clone https://github/Fred-sun/ansible01
-   58  cd ..
-   59  ls
-   60  sudo gedit fist_ansible.yml 
-   61  sudo gedit user.yml 
-   62  ansible-playbook user.yml 
-   63  sudo gedit user.yml 
-   64  vi user.yml 
-   65  sudo gedit user.yml 
-   66  ansible-playbook user.yml 
-   67  ls
-   68  vi user.yml 
-   69  cp user.yml  user2.yml 
-   70  sudo vi user2.yml 
-   71  cp user.yml  user2.yml 
-   72  sudo vi user2.yml 
-   73  ansible-playbook user2.yml 
-   74  vi user2.yml 
-   75  ansible-playbook user2.yml 
-   76  sudo gedit user2.yml 
-   77  ansible-playbook user2.yml 
-   78  vi /etc/ansible/hosts
-   79  ls
-   80  vi ansible_hosts 
-   81  ls
-   82  ansible-playbook user2.yml 
-   83  sudo gedit user2.yml 
-   84  ls
-   85  vi fist_ansible.yml 
-   86  clean
-   87  exit
-   88  sudo ansible-playbook fist_ansible.yml 
-   89  sudo gedit fist_ansible.yml 
-   90  sudo ansible-playbook fist_ansible.yml 
-   91  ls
-   92  cd ansible01/
-   93  ls
-   94  cd ansible/
-   95  ls
-   96  exit
-   97  sudo gedit /etc/ansible/test.yml 
-   98  ansible-playbook fist_ansible.yml 
-   99  gedit fist_ansible.yml 
-  100  ls
-  101  vi test.yml
-  102  ansible-playbook test.yml 
-  103  vi test.yml 
-  104  ansible-playbook test.yml 
-  105  cd /etc/ansible/
-  106  ls
-  107  cp ~/test.yml ./
-  108  sudo cp ~/test.yml ./
-  109  ls
-  110  ansible-playbook test.yml 
-  111  vi test.yml 
-  112  sudo chmod 777 test.yml 
-  113  sudo gedit test.yml 
-  114  ansible-playbook  test.yml 
-  115  sudo gedit test.yml 
-  116  ansible-playbook  test.yml 
-  117  vim test2.yml
-  118  sudo apt-get vim
-  119  sudo apt-get install vim
-  120  ls
-  121  sudo vim test2.yml
-  122  ansible-playbook test2.yml 
-  123  vi test2`
-  124  vi test2.yml 
-  125  vim test2.yml 
-  126  sudo vim test2.yml 
-  127  ansible-playbook test2.yml 
-  128  sudo vim test2.yml 
-  129  sudo vim test2.yml \
-  130  sudo vim test2.yml 
-  131  ansible-playbook test2.yml 
-  132  sudo vi test2.yml 
-  133  ansible-playbook test2.yml 
-  134  sudo vi test2.yml 
-  135  ansible-playbook test2.yml 
-  136  ansible all -m ping
-  137  ls
-  138  vi ~/user.yml 
-  139  ls
-  140  cd /
-  141  ls
-  142  cd tmp/
-  143  ls
-  144  rm *
-  145  sudo rm *.*
-  146  ls
-  147  cd /etc/ansible/
-  148  ls
-  149  touch /tmp/playbook.txt
-  150  cd /tmp/
-  151  ls
-  152  rm playbook.txt 
-  153  ls
-  154  cd ..
-  155  cd etc/
-  156  cd ansible/
-  157  ls
-  158  pwd
-  159  ls
-  160  vi test.yml 
-  161  sudo vim test.yml 
-  162  sudo vim test.yml \
-  163  sudo vim test.yml 
-  164  ansible-playbook test.yml 
-  165  sudo vi test.yml 
-  166  ansible-playbook test.yml 
-  167  sudo gedit test.yml 
-  168  sudo gedit test2.yml 
-  169  :q
-  170  :q!
-  171  sudo gedit test.yml 
-  172  ansible-playbook test.yml
-  173  ansible-playbook test2.yml
-  174  sudo gedit test2.yml 
-  175  ansible-playbook test.yml 
-  176  sudo vim test2.yml 
-  177  ansible-playbook test2.yml 
-  178  mv test2.yml test_pass01.yml
-  179  sudo mv test2.yml test_pass01.yml
-  180  ls
-  181  vi test_pass01.yml 
-  182  cd /tmp/
-  183  ls
-  184  rm playbook.txt 
-  185  cd /etc/ansible/
-  186  ansible-playbook test_pass01.yml 
-  187  ls
-  188  cp ~/user.yml ./
-  189  sudo cp ~/user.yml ./
-  190  sudo vim user.yml 
-  191  ansible-playbook user.yml 
-  192  sudo vim user.yml 
-  193  ansible-playbook user.yml 
-  194  sudo vim user.yml 
-  195  ansible-playbook user.yml 
-  196  ls
-  197  vi user.yml 
-  198  ls
-  199  lls /tmp/
-  200  ll /tmp/
-  201  vi create_user.yml
-  202  sudo vim create_user.yml
-  203  ansible-playbook create_user.yml 
-  204  sudo vim create_user.yml 
-  205  ansible-playbook create_user.yml 
-  206  sudo vim create_user.yml 
-  207  ansible-playbook create_user.yml 
-  208  sudo vim create_user.yml 
-  209  ansible-playbook create_user.yml 
-  210  sudo vim create_user.yml 
-  211  ansible-playbook create_user.yml 
-  212  sudo vim create_user.yml 
-  213  ansible-playbook create_user.yml 
-  214  sudo vim create_user.yml 
-  215  ansible-playbook create_user.yml 
-  216  sudo vim create_user.yml 
-  217  ansible-playbook create_user.yml 
-  218  sudo vim create_user.yml 
-  219  ansible-playbook create_user.yml 
-  220  sudo vim create_user.yml 
-  221  ansible-playbook create_user.yml 
-  222  sudo vim create_user.yml 
-  223  ansible-playbook create_user.yml 
-  224  sudo vim create_user.yml 
-  225  ansible-playbook create_user.yml 
-  226  sudo vim create_user.yml 
-  227  ansible-playbook create_user.yml 
-  228  sudo vim create_user.yml 
-  229  ansible-playbook create_user.yml 
-  230  sudo vim create_user.yml 
-  231  ansible-playbook create_user.yml 
-  232  sudo ansible-playbook create_user.yml 
-  233  ls
-  234  cd ..
-  235  sudo chmod 777 ansible/
-  236  ls
-  237  cd ansible/
-  238  ls
-  239  ansible-playbook  user.yml 
-  240  :q
-  241  ansible-playbook  create_user.
-  242  ansible-playbook  create_user.yml
-  243  ansible-playbook  user.yml 
-  244  ansible-playbook  create_user.
-  245  ansible-playbook  create_user.yml
-  246  sudo vim create_user.yml 
-  247  ansible-playbook  create_user.yml
-  248  ansible-playbook  create_user.ymlls
-  249  ls
-  250  vi user.yml 
-  251  ls
-  252  cp create_user.yml 
-  253  vi create_user.yml
-  254  ls
-  255  exit
-  256  cd /etc/ansible/
-  257  ls
-  258  vi test.yml 
-  259  ls
-  260  exit
-  261  ls /tmp/
-  262  touch test1.txt
-  263  ls
-  264  rm test1.txt 
-  265  touch /tmp/test.txt
-  266  ls /tmp/
-  267  cd /tmp/
-  268  ls
-  269  rm test
-  270  rm test.*
-  271  rm test2.txt 
-  272  ls
-  273  AZ_REPO=$(lsb_release -cs)
-  274  echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" |      sudo tee /etc/apt/sources.list.d/azure-cli.list
-  275  sudo apt-key adv --keyserver packages.microsoft.com --recv-keys 52E16F86FEE04B979B07E28DB02C46DF417A0893
-  276  sudo apt-get install apt-transport-https
-  277  az
-  278  gpg: failed to start the dirmngr '/usr/bin/dirmngr': No such file or directory
-  279  gpg: connecting dirmngr at '/tmp/apt-key-gpghome.kt5zo27tp1/S.dirmngr' failed: No such file or directory
-  280  gpg: keyserver receive failed: No dirmngr
-  281  sudo apt-get install dirmngr
-  282  sudo apt-key adv --keyserver-options http-proxy=http://<USER>:<PASSWORD>@<PROXY-HOST>:<PROXY-PORT>/ --keyserver packages.microsoft.com --recv-keys 52E16F86FEE04B979B07E28DB02C46DF417A0893
-  283  sudo apt-get update && sudo apt-get upgrade
-  284  ssh ansible02@13.90.155.23
-  285  ifconfig
-  286  ls
-  287  sudo gedit fist_ansible.yml 
-  288  ls
-  289  cp fist_ansible.yml fist_ansible_bac.yml 
-  290  sudo gedit fist_ansible
-  291  sudo gedit fist_ansible.yml 
-  292  ansible-playbook fist_ansible.yml 
-  293  sudo gedit fist_ansible.yml 
-  294  ll /etc/ansible/
-  295  ansible web -m shell -a "lsof -i : {{ http_port }}"
-  296  vi /etc/ansible/hosts
-  297  sudo vim /etc/ansible/hosts
-  298  ansible web -m shell -a "lsof -i : {{ http_port }}"
-  299  sudo vim /etc/ansible/hosts
-  300  ansible web -m shell -a "lsof -i : {{ http_port }}"
-  301  ansible web -m shell -a "lsof -i : {{ http_port|default=80  }}"
-  302  ansible web -m shell -a "lsof -i : {{ http_port|default:80  }}"
-  303  ansible web -m shell -a "lsof -i : {{ http_port }}"
-  304  ansible web -m shell -a "ping "
-  305  ansible web -m "useradd centos"
-  306  ansible web -m command -a "useradd centos"
-  307  ansible all -m command -a "useradd centos"
-  308  sudo ansible all -m command -a "useradd centos"
-  309  ansible all -m command -a "ls /tmp"
-  310  ansible all -m command -a "pwd"
-  311  ansible all -m copy -a "src=/tmp/test.txt dest=/tmp/test2.txt"
-  312  az
-  313  sudo apt-get install azuer
-  314  sudo pip install azu
-  315  sudo pip list |grep 'penSSL'
-  316  sudo pip list
-  317  sudo apt-get install OpenSSL
-  318  sudo pip install OpenSSL
-  319  sudo pip install pyOpenSSL (17.5.0)
-  320  sudo pip install pyOpenSSL 
-  321  pip list
-  322  pyOpenSSL (17.5.0)
-  323  sudo apt-get update && sudo apt-get install azure-cli
-  324  az
-  325  sudo apt-key install apt-transport-https
-  326  sudo apt-get update
-  327  az
-  328  reboot
-  329  sudo gedit fist_ansible.
-  330  sudo gedit fist_ansible.yml 
-  331  sudo apt-get install -y nodejs
-  332  npm install zaure-cli -g
-  333  apt-get install zaure-cli -g
-  334  apt-get install zaure-cli 
-  335  vi create_VM.yml 
-  336  ansible-playbook -syntax-c create_VM.yml 
-  337  ansible-playbook  create_VM.yml 
-  338  vi create_VM.yml 
-  339  ansible-playbook  create_VM.yml 
-  340  vi create_VM.yml 
-  341  ansible-playbook  create_VM.yml 
-  342  az account show
-  343  ansible 52.191.197.239 -m ping 
-  344  ssh ansible02@52.191.197.239
-  345  ssh ansible01@52.191.197.239
-  346  vi /etc/ansible/hosts
-  347  ls
-  348  vi /etc/ansible/ansible.cfg 
-  349  ansible all -m ping
-  350  vi /etc/ansible/ansible.cfg 
-  351  exit
-  352  exit()
-  353  exit
-  354  sudo gedit create_VM.yml 
-  355  az
-  356  sudo apt-get install azure-cli
-  357  az
-  358  az login
-  359  sudo gedit test2.yml 
-  360  sudo gedit test4.yml 
-  361  sudo gedit test3.yml 
-  362  sudo gedit test4.yml 
-  363  sudo gedit test3.yml 
-  364  sudo gedit test4.yml 
-  365  sudo gedit test3.yml 
-  366  az account show
-  367  az login
-  368  ssh ansible02@13.90.155.23
-  369  ls
-  370  ssh-keygen
-  371  ssh-copy-id -i .ssh/id_rsa.pub ansible02@13.90.155.23
-  372  ssh ansible02@13.90.155.23
-  373  ls
-  374  vi user.yml 
-  375  ls
-  376  ansible-playbook test.yml 
-  377  vi /etc/host
-  378  vi /etc/hosts
-  379  ls
-  380  cd /etc/ansible/
-  381  ls
-  382  vi hosts
-  383  ssh-copy-id -i .ssh/id_rsa.pub ansible02@52.191.197.239
-  384  ssh-copy-id -i .ssh/id_rsa.pub ansible01@52.191.197.239
-  385  ssh-copy-id -i ~/.ssh/id_rsa.pub ansible01@52.191.197.239
-  386  ansibe all -m ping 
-  387  ls
-  388  cd ..
-  389  asible
-  390  ansible
-  391  ansible all -m ping 
-  392  vi ansible/hosts
-  393  ping 52.191.197.239
-  394  ansible all -m ping 
-  395  ansible all -m command -a "ls /tmp"
-  396  cd ~/
-  397  ls
-  398  vi test.yml 
-  399  ansible-playbook test.yml 
-  400  vi test.yml 
-  401  ansible-playbook test.yml 
-  402  vi test.yml 
-  403  ls
-  404  vi fist_ansible.yml 
-  405  ansible-playbook fist_ansible.yml 
-  406  vi fist_ansible.yml 
-  407  ansible-playbook fist_ansible.yml 
-  408  vi fist_ansible.yml 
-  409  ansible-playbook fist_ansible.yml 
-  410  vi fist_ansible.yml 
-  411  ansible-playbook fist_ansible.yml 
-  412  vi fist_ansible.yml 
-  413  ansible-playbook fist_ansible.yml 
-  414  sudo gedit fist_ansible_bac.yml 
-  415  ansible-playbook fist_ansible_bac.yml 
-  416  sudo gedit fist_ansible_bac.yml 
-  417  ansible-playbook fist_ansible_bac.yml 
-  418  sudo gedit fist_ansible_bac.yml 
-  419  ansible-playbook fist_ansible_bac.yml 
-  420  ansible-playbook --syntax-c fist_ansible_bac.yml 
-  421  ansible-playbook --syntax-check fist_ansible_bac.yml 
-  422  sudo gedit fist_ansible_bac.yml 
-  423  ansible-playbook --syntax-check fist_ansible_bac.yml 
-  424  ansible-playbook -C fist_ansible_bac.yml 
-  425  cp fist_ansible_bac.yml fist_ansible.yml 
-  426  rm fist_ansible_bac.
-  427  rm fist_ansible_bac.yml 
-  428  ls
-  429  vi fist_ansible_bac.retry 
-  430  ls
-  431  vi /etc/ansible/hosts
-  432  rm fist_ansible.yml 
-  433  ls
-  434  sudo vim create_VM.yml
-  435  ansible-playbook create_VM.yml 
-  436  ansible-playbook -syntax-check create_VM.yml 
-  437  ansible-playbook create_VM.yml 
-  438  ansible-playbook -syntax-check create_VM.yml 
-  439  ansible-playbook create_VM.yml 
-  440  sudo vim create_VM.yml
-  441  ansible-playbook create_VM.yml 
-  442  sudo vim create_VM.yml
-  443  ansible-playbook create_VM.yml 
-  444  sudo vim create_VM.yml
-  445  ansible-playbook create_VM.yml 
-  446  sudo vim create_VM.yml
-  447  ansible-playbook create_VM.yml 
-  448  sudo vim create_VM.yml
-  449  ansible-playbook create_VM.yml 
-  450  sudo vi create_VM.yml 
-  451  ansible-playbook create_VM.yml 
-  452  sudo vi create_VM.yml 
-  453  ansible-playbook create_VM.yml 
-  454  sudo vi create_VM.yml 
-  455  ansible-playbook create_VM.yml 
-  456  ls
-  457  rm create_Virtualmachine*
-  458  ls
-  459  sudo vi create_VM.yml 
-  460  rm create_Virtualmachine*
-  461  ansible-playbook create_VM.yml 
-  462  vi create_VM.yml 
-  463  ansible-playbook create_VM.yml 
-  464  sudo vi create_VM.yml 
-  465  ansible-playbook create_VM.yml 
-  466  sudo vi /etc/ansible/hosts
-  467  ansible-playbook create_VM.yml 
-  468  sudo vi create_VM.yml 
-  469  ansible-playbook create_VM.yml 
-  470  az account show
-  471  sudo vi create_VM.yml 
-  472  ansible-playbook create_VM.yml 
-  473  sudo vi create_VM.yml 
-  474  ansible-playbook create_VM.yml 
-  475  sudo vi create_VM.yml 
-  476  ansible-playbook create_VM.yml 
-  477  az account show
-  478  sudo apt-get install Virtualbox
-  479  sudo apt-get install virtualbox
-  480  ansible-playbook create_VM.yml 
-  481  ls
-  482  vi vm_ansible
-  483  vi vm_ansible.yml
-  484  ls
-  485  rm create_VM.retry 
-  486  ls
-  487  rm y
-  488  rm y.pub 
-  489  vi create_VM.yml 
-  490  ls
-  491  sudo vm_test.yml
-  492  sudo vim vm_test.yml
-  493  sudo gedit vm_test.yml 
-  494  ansible-playbook -syntax-check vm_test.yml 
-  495  ansible-playbook vm_test.yml 
-  496  sudo gedit create_VM.yml 
-  497  sudo gedit vm_test.yml 
-  498  ansible-playbook vm_test.yml 
-  499  sudo gedit vm_test.yml 
-  500  ansible-playbook vm_test.yml 
-  501  sudo gedit vm_test.yml 
-  502  ansible-playbook vm_test.yml 
-  503  sudo gedit vm_test.yml 
-  504  ansible-playbook vm_test.yml 
-  505  sudo gedit vm_test.yml 
-  506  sudo gedit vm test2.yml
-  507  ansible-playbook test2.yml 
-  508  az
-  509  sudo gedit vm test2.yml
-  510  ansible-playbook test2.yml 
-  511  sudo gedit vm test2.yml
-  512  ansible-playbook -syntax-check test2.yml 
-  513  ansible-playbook -C test2.yml 
-  514  ansible-playbook -c test2.yml 
-  515  ansible-playbook -C test2.yml 
-  516  ansible-playbook --syntax-check test2.yml 
-  517  ansible-playbook -C test2.yml 
-  518  ansible-playbook test2.yml 
-  519  az
-  520  az -v
-  521  python -ver
-  522  python -v
-  523  ansible-playbook test2.yml 
-  524  ansible -ver
-  525  ansible -v
-  526  ansible 
-  527  ansible -verbose
-  528  ansible --version
-  529  ls
-  530  cd ansible01/
-  531  ls
-  532  cd ansible/
-  533  ls
-  534  ansible --ver
-  535  ansible --version
-  536  ansible-playbook ~/test2.yml 
-  537  az
-  538  az login
-  539  ansible-playbook ~/test2.yml 
-  540  ls
-  541  cd ~/
-  542  ;s
-  543  ls
-  544  sudo gedit test3.yml
-  545  ansible-playbook test3.yml 
-  546  sudo gedit test3.yml
-  547  ansible-playbook test3.yml 
-  548  sudo gedit test3.yml10
-  549  ansible-playbook test3.yml 
-  550  ls
-  551  mkdir bac
-  552  mv fist_ansible* bac/
-  553  ls
-  554  mv test.yml bac/
-  555  mv user* bac/
-  556  mv vm_test.yml bac/
-  557  ls
-  558  vi test2.yml 
-  559  ansible-playbook test3.yml 
-  560  gedit test3.yml 
-  561  ansible-playbook test4.yml 
-  562  sudo gedit test4.yml 
-  563  ansible-playbook test4.yml 
-  564  sudo gedit test4.yml 
-  565  ansible-playbook test4.yml 
-  566  sudo gedit test4.yml 
-  567  ansible-playbook test4.yml 
-  568  sudo gedit test4.
-  569  sudo gedit test4.yml 
-  570  ansible-playbook test4.yml 
-  571  sudo gedit test4.yml 
-  572  ansible-playbook test4.yml 
-  573  sudo gedit test4.yml 
-  574  ansible-playbook test4.yml 
-  575  sudo gedit test4.yml 
-  576  ansible-playbook test4.yml 
-  577  sudo gedit test4.yml 
-  578  ansible-playbook test4.yml 
-  579  sudo gedit test4.yml 
-  580  ansible-playbook test4.yml 
-  581  az login
-  582  ansible-playbook test4.yml 
-  583  ansible all -m ping
-  584  vi /etc/ansible/hosts
-  585  ansible-playbook test4.yml 
-  586  ansible-playbook test3.yml 
-  587  vi /etc/ansible/hosts
-  588  ansible-playbook test3.yml 
-  589  sudo gedit test3.yml 
-  590  ansible-playbook test3.yml 
-  591  sudo gedit test3.yml 
-  592  ansible-playbook test3.yml 
-  593  ifconfig
-  594  ls
-  595  sudo gedit test.yml
-  596  ansible-playbook test.yml 
-  597  sudo gedit test.yml 
-  598  ansible-playbook test.yml 
-  599  sudo gedit test.yml 
-  600  ansible-playbook test.yml 
-  601  sudo gedit test.yml 
-  602  ls
-  603  ansible-playbook test4.yml 
-  604  ansible-playbook test3\.yml 
-  605  ansible-playbook test3.yml 
-  606  sudo gedit test4.yml 
-  607  ansible-playbook test3.yml 
-  608  sudo gedit test4.yml 
-  609  sudo gedit test3.yml 
-  610  az account show
-  611  sudo gedit test3.yml 
-  612  ansible-playbook test3.yml 
-  613  sudo gedit test3.yml 
-  614  account show
-  615  az account show
-  616  ls
-  617  gedit test4.yml 
-  618  ansible-playbook test4.yml 
-  619  az account show
-  620  az login
-  621  az account set -s 2085065b-00f8-4cba-9675-ba15f4d4ab66
-  622  az account show
-  623  ansible-playbook test4.yml 
-  624  sudo geidt test4.yml 
-  625  sudo gedit test4.yml 
-  626  ls
-  627  cp test4.yml test5.yml
-  628  sudo gedit test5.yml 
-  629  ansible-playbook test5.yml 
-  630  az accout show
-  631  az account show
-  632  sudo gedit test5.yml 
-  633  az accout show
-  634  ansible-playbook test5.yml 
-  635  sudo gedit test5.yml 
-  636  ansible-playbook test5.yml 
-  637  sudo gedit test5.yml 
-  638  sudo gedit test6.yml
-  639  ansible-playbook test6.yml 
-  640  sudo gedit test6.yml
-  641  ansible-playbook test6.yml 
-  642  sudo gedit test6.yml 
-  643  cp test5.yml test7.yml
-  644  sudo gedit test7.yml 
-  645  ansible-playbook test7.yml 
-  646  ls
-  647  sudo gedit test7.yml 
-  648  sudo gedit test5.yml 
-  649  sudo gedit test6.yml 
-  650  cp test6.yml  test6_bac.yml
-  651  sudo gedit test6_bac.yml 
-  652  ansible-playbook test6_bac.yml 
-  653  rm test6_bac.*
-  654  ls
-  655  sudo gedit test5.yml 
-  656  ansible-playbook test5.yml 
-  657  sudo gedit test5.yml 
-  658  ls
-  659  mkdir zim_ansible
-  660  cd zim_ansible/
-  661  git clone https://github.com/zikalino/ansible-samples
-  662  ls
-  663  cd ansible-samples/
-  664  dir
-  665  ansible-galaxy install -r requirements.yml 
-  666  ls
-  667  sudo gedit scaleset-tomcat-resource.yml 
-  668  cp scaleset-tomcat-resource.yml ./scaleset-tomcat-resource_bac.yml 
-  669  sudo gedit scaleset-tomcat-resource.yml 
-  670  ansible-playbook scaleset-tomcat-resource.yml 
-  671  ls
-  672  sudo gedit scaleset-tomcat-resource.yml 
-  673  ansible-playbook scaleset-tomcat-resource.yml 
-  674  sudo gedit /etc/ansible/hosts
-  675  ansible-playbook scaleset-tomcat-resource.yml 
-  676  sudo gedit scaleset-tomcat-resource.yml 
-  677  sudo gedit /etc/ansible/hosts
-  678  sudo gedit scaleset-tomcat-resource.yml 
-  679  ansible-playbook scaleset-tomcat-resource.yml 
-  680  sudo gedit scaleset-tomcat-resource.yml \
-  681  sudo gedit scaleset-tomcat-resource.yml 
-  682  ls
-  683  ssh zimsscaleset@52.179.4.189
-  684  ssh zimsscaleset@40.71.216.224
-  685  ansible-playbook scaleset-tomcat-resource.yml 
-  686  sudo gedit scaleset-tomcat-resource.yml 
-  687  git
-  688  git show
-  689  ls
-  690  vi README.md 
-  691  vi requirements.yml 
-  692  ls
-  693  net use
-  694  git config
-  695  git --get-all
-  696  git config --get-all
-  697  git -l
-  698  git config -l
-  699  ls
-  700  cd ..
-  701  ls
-  702  mkdir Helloworld
-  703  cd Helloworld/
-  704  git clone https://github.com/Fred-sun/HelloWorld
-  705  ls
-  706  cd HelloWorld/
-  707  ls
-  708  cp ~/test6.yml 
-  709  cp ~/test6.yml ./
-  710  git add test6.yml 
-  711  git commit 'First add'
-  712  git config --list
-  713  git add *
-  714  git add LICENSE
-  715  git commit -m "first add file to git"
-  716  git status
-  717  git branch --unset-upstram
-  718  git branch --unset-upstream
-  719  git status
-  720  ls
-  721  mkdir readme.txt
-  722  git add *
-  723  git add README
-  724  git commit -m "first add file to git"
-  725  git status
-  726  git commit
-  727  git log
-  728  cd ..
-  729  cd zim_ansible/
-  730  ls
-  731  cd ansible-samples/
-  732  ls
-  733  sudo gedit scaleset-tomcat-resource.yml 
-  734  ansible-playbook scaleset-tomcat-resource.yml 
-  735  sudo gedit scaleset-tomcat-resource.yml 
-  736  ansible-playbook scaleset-tomcat-resource.yml 
-  737  sudo gedit scaleset-tomcat-resource.yml 
-  738  ansible-playbook scaleset-tomcat-resource.yml 
-  739  sudo gedit scaleset-tomcat-resource.yml 
-  740  ansible-playbook scaleset-tomcat-resource.yml 
-  741  sudo gedit scaleset-tomcat-resource.yml 
-  742  ansible-playbook scaleset-tomcat-resource.yml 
-  743  sudo gedit scaleset-tomcat-resource.yml 
-  744  ansible-playbook scaleset-tomcat-resource.yml 
-  745  sudo gedit scaleset-tomcat-resource.yml 
-  746  ansible-playbook scaleset-tomcat-resource.yml 
-  747  az account show
-  748  sudo gedit scaleset-tomcat-resource.yml 
-  749  ansible-playbook scaleset-tomcat-resource.yml 
-  750  ssh zimsscaleset@40.71.216.224
-  751  ls
-  752  az group create --name myResourceGroupAnsible --location eastus
-  753  az vm create --name myVMAnsible --resource-group myResourceGroupAnsible --image UbuntuLTS --admin-username azureuser --generate-ssh-keys
-  754  s
-  755  ssh ansible01@52.191.197.239
-  756  exit
-  757  az account show
-  758  sudo gedit 1.log 
-  759  ssh azureuser@52.224.12.25
-  760  hitory > 1.log
-  761  history > 1.log
-  762  sudo gedit 1.log 
-  763  cd zim_ansible/
-  764  dir
-  765  cd ansible-samples/
-  766  ls
-  767  sudo gedit scaleset-tomcat-resource.yml 
-  768  ls
-  769  ansible-playbook scaleset-tomcat-resource.yml 
-  770  cd ~/.azure/
-  771  ls
-  772  sudo vi credentials
-  773  cd ~/
-  774  cd zim_ansible/ansible-samples/
-  775  ansible-playbook scaleset-tomcat-resource.yml 
-  776  ssh zimsscaleset@13.82.94.53
-  777  sudo gedit ~/.azure/credentials 
-  778  ansible-playbook scaleset-tomcat-resource.yml 
-  779  sudo gedit scaleset-tomcat-resource.yml 
-  780  ansible-playbook scaleset-tomcat-resource.yml 
-  781  ansible-galaxy install -r requirements.yml 
-  782  ansible-playbook scaleset-tomcat-resource.yml 
-  783  sudo gedit scaleset-tomcat-resource.yml 
-  784  ssh zimsscaleset@13.82.94.53
-  785  az ad sp create-for-rbac --help
-  786  az ad sp create-for-rbac --output
-  787  az ad sp create-for-rbac --output {json}
-  788  az ad sp create-for-rbac --verbose
-  789  export AZURE_SUBSCRIPTION_ID=2085065b-00f8-4cba-9675-ba15f4d4ab66
-  790  export AZURE_CLIENT_ID=ae12946a-f4de-4609-a5d1-68c36604f3b0
-  791  export AZURE_SECRET=KcDB6CMlNn+MmtA+ZJv6xXmXQz+x2JRxGQBy6Dh6adw=
-  792  export AZURE_TENANT=72f988bf-86f1-41af-91ab-2d7cd011db47
-  793  ansible-playbook scaleset-tomcat-resource.yml 
-  794  ll ~/.azure/credentials 
-  795  export AZURE_SUBSCRIPTION_ID=2085065b-00f8-4cba-9675-ba15f4d4ab66
-  796  export AZURE_CLIENT_ID=eec5624a-90f8-4386-8a87-02730b5410d5
-  797  export AZURE_SECRET=531dcffa-3aff-4488-99bb-4816c395ea3f
-  798  export AZURE_TENANT=72f988bf-86f1-41af-91ab-2d7cd011db47
-  799  ansible-playbook scaleset-tomcat-resource.yml 
-  800  ls
-  801  cd ~/
-  802  ls
-  803  az group create --name myResourceGroup --location westeurope
-  804  az vm create --resource-group myResourceGroup --name myVM --image UbuntuLTS --generate-ssh-keys
-  805  az vm open-port --port 80 --resource-group myResourceGroup --name myVM
-  806  az vm extension set --publisher microsoft.Azure.Extensions --version 2.0 --name CustomScript --vm-name myVM --resource-group myResourceGroup --setting '{"commandToExecute"""apt-get -y update && apt-get -y install nginx"}'
-  807  az vm extension set --publisher Microsoft.Azure.Extensions --version 2.0 --name CustomScript --vm-name myVM --resource-group myResourceGroup --settings '{"commandToExecute":"apt-get -y update && apt-get -y install nginx"}'
-  808  ssh 
-  809  ssh myVM@52.174.85.57
-  810  ssh-copy-id -i ~/.ssh/id_rsa.pub 52.174.85.57
-  811  ssh myVM@52.174.85.57
-  812  ssh-copy-id -i ~/.ssh/id_rsa.pub 52.174.85.57 -f
-  813  ssh myVM@52.174.85.57
-  814  ssh 52.174.85.57
-  815  az vm deallocate --resource-group myResourceGroup --name myVM
-  816  az vm generalize --resource-group myResourceGroup --name myVM
-  817  az image create --resource-group myResourceGroup --name myImage --source myVM
-  818  az vm create --resource-group myResourceGroup --name myVMfromImage --image myImage --admin-username azureuser --generate-ssh-keys
-  819  az image list --resource-group myResourceGroup
-  820  gedit ~/zim_ansible/ansible-samples/scaleset-tomcat-resource.yml 
-  821  history
-  822  history > 2.log
+azure_rm_acs
+azure_rm_aks
+azure_rm_aks_facts
+azure_rm_aksversion_facts
+azure_rm_appgateway
+azure_rm_applicationsecuritygroup
+azure_rm_applicationsecuritygroup_facts
+azure_rm_appserviceplan
+azure_rm_appserviceplan_facts
+azure_rm_autoscale
+azure_rm_autoscale_facts
+azure_rm_availabilityset
+azure_rm_availabilityset_facts
+azure_rm_cdnendpoint
+azure_rm_cdnendpoint_facts
+azure_rm_cdnprofile
+azure_rm_cdnprofile_facts
+azure_rm_containerinstance
+azure_rm_containerinstance_facts
+azure_rm_containerregistry
+azure_rm_containerregistry_facts
+azure_rm_cosmosdbaccount
+azure_rm_cosmosdbaccount_facts
+azure_rm_deployment
+azure_rm_deployment_facts
+azure_rm_devtestlab
+azure_rm_devtestlab_facts
+azure_rm_devtestlabarmtemplate_facts
+azure_rm_devtestlabartifact_facts
+azure_rm_devtestlabartifactsource
+azure_rm_devtestlabartifactsource_facts
+azure_rm_devtestlabcustomimage
+azure_rm_devtestlabcustomimage_facts
+azure_rm_devtestlabenvironment
+azure_rm_devtestlabenvironment_facts
+azure_rm_devtestlabpolicy
+azure_rm_devtestlabpolicy_facts
+azure_rm_devtestlabschedule
+azure_rm_devtestlabschedule_facts
+azure_rm_devtestlabvirtualmachine
+azure_rm_devtestlabvirtualmachine_facts
+azure_rm_devtestlabvirtualnetwork
+azure_rm_devtestlabvirtualnetwork_facts
+azure_rm_dnsrecordset
+azure_rm_dnsrecordset_facts
+azure_rm_dnszone
+azure_rm_dnszone_facts
+azure_rm_functionapp
+azure_rm_functionapp_facts
+azure_rm_hdinsightcluster
+azure_rm_hdinsightcluster_facts
+azure_rm_devtestlabartifact_facts
+azure_rm_devtestlabartifactsource
+azure_rm_devtestlabartifactsource_facts
+azure_rm_devtestlabcustomimage
+azure_rm_devtestlabcustomimage_facts
+azure_rm_devtestlabenvironment
+azure_rm_devtestlabenvironment_facts
+azure_rm_devtestlabpolicy
+azure_rm_devtestlabpolicy_facts
+azure_rm_devtestlabschedule
+azure_rm_devtestlabschedule_facts
+azure_rm_devtestlabvirtualmachine
+azure_rm_devtestlabvirtualmachine_facts
+azure_rm_devtestlabvirtualnetwork
+azure_rm_devtestlabvirtualnetwork_facts
+azure_rm_dnsrecordset
+azure_rm_dnsrecordset_facts
+azure_rm_dnszone
+azure_rm_dnszone_facts
+azure_rm_functionapp
+azure_rm_functionapp_facts
+azure_rm_hdinsightcluster
+azure_rm_hdinsightcluster_facts
+azure_rm_devtestlabartifact_facts
+azure_rm_devtestlabartifactsource
+azure_rm_devtestlabartifactsource_facts
+azure_rm_devtestlabcustomimage
+azure_rm_devtestlabcustomimage_facts
+azure_rm_devtestlabenvironment
+azure_rm_devtestlabenvironment_facts
+azure_rm_devtestlabpolicy
+azure_rm_devtestlabpolicy_facts
+azure_rm_devtestlabschedule
+azure_rm_devtestlabschedule_facts
+azure_rm_devtestlabvirtualmachine
+azure_rm_devtestlabvirtualmachine_facts
+azure_rm_devtestlabvirtualnetwork
+azure_rm_devtestlabvirtualnetwork_facts
+azure_rm_dnsrecordset
+azure_rm_dnsrecordset_facts
+azure_rm_dnszone
+azure_rm_dnszone_facts
+azure_rm_functionapp
+azure_rm_functionapp_facts
+azure_rm_hdinsightcluster
+azure_rm_hdinsightcluster_facts
+azure_rm_image
+azure_rm_image_facts
+azure_rm_keyvault
+azure_rm_keyvaultkey
+azure_rm_keyvaultsecret
+azure_rm_loadbalancer
+azure_rm_loadbalancer_facts
+azure_rm_loganalyticsworkspace
+azure_rm_loganalyticsworkspace_facts
+azure_rm_managed_disk
+azure_rm_managed_disk_facts
+azure_rm_manageddisk
+azure_rm_manageddisk_facts
+azure_rm_mariadbconfiguration
+azure_rm_mariadbconfiguration_facts
+azure_rm_mariadbdatabase
+azure_rm_mariadbdatabase_facts
+azure_rm_mariadbfirewallrule
+azure_rm_mariadbfirewallrule_facts
+azure_rm_mariadbserver
+azure_rm_mariadbserver_facts
+azure_rm_mysqlconfiguration
+azure_rm_mysqlconfiguration_facts
+azure_rm_mysqldatabase
+azure_rm_mysqldatabase_facts
+azure_rm_mysqlfirewallrule
+azure_rm_mysqlfirewallrule_facts
+azure_rm_mysqlserver
+azure_rm_mysqlserver_facts
+azure_rm_networkinterface
+azure_rm_networkinterface_facts
+azure_rm_postgresqlconfiguration
+azure_rm_postgresqlconfiguration_facts
+azure_rm_postgresqldatabase
+azure_rm_postgresqldatabase_facts
+azure_rm_postgresqlfirewallrule
+azure_rm_postgresqlfirewallrule_facts
+azure_rm_postgresqlserver
+azure_rm_postgresqlserver_facts
+azure_rm_publicipaddress
+azure_rm_publicipaddress_facts
+azure_rm_rediscache
+azure_rm_rediscache_facts
+azure_rm_rediscachefirewallrule
+azure_rm_resource
+azure_rm_resource_facts
+azure_rm_resourcegroup
+azure_rm_resourcegroup_facts
+azure_rm_roleassignment
+azure_rm_roleassignment_facts
+azure_rm_roledefinition
+azure_rm_roledefinition_facts
+azure_rm_route
+azure_rm_routetable
+azure_rm_routetable_facts
+azure_rm_securitygroup
+azure_rm_securitygroup_facts
+azure_rm_servicebus
+azure_rm_servicebus_facts
+azure_rm_servicebusqueue
+azure_rm_servicebussaspolicy
+azure_rm_servicebustopic
+azure_rm_servicebustopicsubscription
+azure_rm_sqldatabase
+azure_rm_sqldatabase_facts
+azure_rm_sqlfirewallrule
+azure_rm_sqlfirewallrule_facts
+azure_rm_sqlserver
+azure_rm_sqlserver_facts
+azure_rm_storageaccount
+azure_rm_storageaccount_facts
+azure_rm_storageblob
+azure_rm_subnet
+azure_rm_subnet_facts
+azure_rm_trafficmanagerendpoint
+azure_rm_trafficmanagerendpoint_facts
+azure_rm_trafficmanagerprofile
+azure_rm_trafficmanagerprofile_facts
+azure_rm_virtualmachine
+azure_rm_virtualmachine_extension
+azure_rm_virtualmachine_facts
+azure_rm_virtualmachine_scaleset
+azure_rm_virtualmachine_scaleset_facts
+azure_rm_virtualmachineextension
+azure_rm_virtualmachineextension_facts
+azure_rm_virtualmachineimage_facts
+azure_rm_virtualmachinescaleset
+azure_rm_virtualmachinescaleset_facts
+azure_rm_virtualmachinescalesetextension
+azure_rm_virtualmachinescalesetextension_facts
+azure_rm_virtualmachinescalesetinstance
+azure_rm_virtualmachinescalesetinstance_facts
+azure_rm_virtualnetwork
+azure_rm_virtualnetwork_facts
+azure_rm_virtualnetworkgateway
+azure_rm_virtualnetworkpeering
+azure_rm_virtualnetworkpeering_facts
+azure_rm_webapp
+azure_rm_webapp_facts
