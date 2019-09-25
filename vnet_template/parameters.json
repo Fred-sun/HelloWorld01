@@ -1,0 +1,12 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "virtualNetworks_v_xisuRG_vnet_name": {
+            "value": null
+        },
+        "networkSecurityGroups_rg_cleanupservice_nsg_externalid": {
+            "value": null
+        }
+    }
+}
