@@ -1,0 +1,117 @@
+fred@fred-Virtual-Machine:~/task/shenjie/test/azure_rm_deployment/tasks$ ansible-playbook  tasks.yml 
+ [WARNING]: Skipping plugin (/usr/local/lib/python2.7/dist-
+packages/ansible/plugins/connection/accelerate.py) as it seems to be invalid:
+cannot import name key_for_hostname
+
+
+PLAY [for azure_rm_dnszone playbook test] **************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [127.0.0.1]
+
+TASK [create resource group] ***************************************************
+changed: [127.0.0.1]
+
+TASK [Create random dns label] *************************************************
+ok: [127.0.0.1]
+
+TASK [Create Azure Deploy] *****************************************************
+changed: [127.0.0.1]
+
+TASK [Add new instance to host group] ******************************************
+changed: [127.0.0.1] => (item={u'vm_name': u'MyUbuntuVM', u'ips': [{u'public_ip': u'40.87.44.181', u'public_ip_allocation_method': u'Dynamic', u'dns_settings': {u'domain_name_label': u'test0a43bc4b66e3002312352', u'fqdn': u'test0a43bc4b66e3002312352.eastus.cloudapp.azure.com'}, u'id': u'/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisuRG01/providers/Microsoft.Network/publicIPAddresses/myPublicIP', u'name': u'myPublicIP'}]})
+
+TASK [Get Deployment Facts] ****************************************************
+ok: [127.0.0.1]
+
+TASK [debug] *******************************************************************
+ok: [127.0.0.1] => {
+    "output": {
+        "changed": false, 
+        "deployments": [
+            {
+                "id": "/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisuRG01/providers/Microsoft.Resources/deployments/test0a43bc4b66e3002312352", 
+                "name": "test0a43bc4b66e3002312352", 
+                "output_resources": [
+                    {
+                        "depends_on": [
+                            "/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisuRG01/providers/Microsoft.Storage/storageAccounts/3xuewtbulsdpmsalinuxvm", 
+                            "/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisuRG01/providers/Microsoft.Network/networkInterfaces/myVMNic", 
+                            "/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisuRG01/providers/Microsoft.Storage/storageAccounts/3xuewtbulsdpmsalinuxvm"
+                        ], 
+                        "id": "/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisuRG01/providers/Microsoft.Compute/virtualMachines/MyUbuntuVM", 
+                        "name": "MyUbuntuVM", 
+                        "type": "Microsoft.Compute/virtualMachines"
+                    }, 
+                    {
+                        "depends_on": [
+                            "/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisuRG01/providers/Microsoft.Network/publicIPAddresses/myPublicIP", 
+                            "/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisuRG01/providers/Microsoft.Network/virtualNetworks/MyVNET"
+                        ], 
+                        "id": "/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisuRG01/providers/Microsoft.Network/networkInterfaces/myVMNic", 
+                        "name": "myVMNic", 
+                        "type": "Microsoft.Network/networkInterfaces"
+                    }, 
+                    {
+                        "depends_on": [], 
+                        "id": "/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisuRG01/providers/Microsoft.Network/virtualNetworks/MyVNET", 
+                        "name": "MyVNET", 
+                        "type": "Microsoft.Network/virtualNetworks"
+                    }, 
+                    {
+                        "depends_on": [], 
+                        "id": "/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisuRG01/providers/Microsoft.Storage/storageAccounts/3xuewtbulsdpmsalinuxvm", 
+                        "name": "3xuewtbulsdpmsalinuxvm", 
+                        "type": "Microsoft.Storage/storageAccounts"
+                    }, 
+                    {
+                        "depends_on": [], 
+                        "id": "/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisuRG01/providers/Microsoft.Network/publicIPAddresses/myPublicIP", 
+                        "name": "myPublicIP", 
+                        "type": "Microsoft.Network/publicIPAddresses"
+                    }
+                ], 
+                "outputs": {
+                    "hostname": {
+                        "type": "String", 
+                        "value": "test0a43bc4b66e3002312352.eastus.cloudapp.azure.com"
+                    }, 
+                    "sshCommand": {
+                        "type": "String", 
+                        "value": "ssh chouseknecht@test0a43bc4b66e3002312352.eastus.cloudapp.azure.com"
+                    }
+                }, 
+                "parameters": {
+                    "adminPassword": {
+                        "type": "SecureString"
+                    }, 
+                    "adminUsername": {
+                        "type": "String", 
+                        "value": "chouseknecht"
+                    }, 
+                    "dnsLabelPrefix": {
+                        "type": "String", 
+                        "value": "test0a43bc4b66e3002312352"
+                    }, 
+                    "ubuntuOSVersion": {
+                        "type": "String", 
+                        "value": "16.04.0-LTS"
+                    }
+                }, 
+                "provisioning_state": "Succeeded", 
+                "resource_group": "v-xisuRG01", 
+                "template_link": "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/d01a5c06f4f1bc03a049ca17bbbd6e06d62657b3/101-vm-simple-linux/azuredeploy.json"
+            }
+        ], 
+        "failed": false
+    }
+}
+
+TASK [Assert that values are returned] *****************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP *********************************************************************
+127.0.0.1                  : ok=8    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0 

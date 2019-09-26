@@ -1,0 +1,109 @@
+fred@fred-Virtual-Machine:~/task/shenjie/test/azure_rm_storageaccount/tasks$ ansible-playbook  tasks.yml 
+ [WARNING]: Skipping plugin (/usr/local/lib/python2.7/dist-
+packages/ansible/plugins/connection/accelerate.py) as it seems to be invalid:
+cannot import name key_for_hostname
+
+
+PLAY [for azure_rm_dnszone playbook test] **************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [127.0.0.1]
+
+TASK [create resource group] ***************************************************
+changed: [127.0.0.1]
+
+TASK [Create storage account name] *********************************************
+ok: [127.0.0.1]
+
+TASK [Test invalid account name] ***********************************************
+fatal: [127.0.0.1]: FAILED! => {"changed": false, "msg": "Parameter error: account_type required when creating a storage account."}
+...ignoring
+
+TASK [Assert task failed] ******************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Delete storage account] **************************************************
+ok: [127.0.0.1]
+
+TASK [Create new storage account] **********************************************
+changed: [127.0.0.1]
+
+TASK [Assert status succeeded and results include an Id value] *****************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Create new storage account (idempotence)] ********************************
+ok: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Gather facts by tags] ****************************************************
+ok: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Change account type] *****************************************************
+fatal: [127.0.0.1]: FAILED! => {"changed": false, "msg": "Storage account of type Standard_LRS cannot be changed to a type of Premium_LRS or Standard_ZRS."}
+...ignoring
+
+TASK [Assert account type change failed] ***************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Change account type and add custom domain] *******************************
+fatal: [127.0.0.1]: FAILED! => {"changed": false, "msg": "Failed to update custom domain: Azure Error: StorageDomainNameCouldNotVerify\nMessage: The custom domain name could not be verified. CNAME mapping from ansible.com to any of 8693aca8972e6b0c1f1730f1.blob.core.windows.net,8693aca8972e6b0c1f1730f1.z13.web.core.windows.net does not exist."}
+...ignoring
+
+TASK [Assert CNAME failure] ****************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Update account tags] *****************************************************
+changed: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Gather facts] ************************************************************
+ok: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Gather facts] ************************************************************
+ok: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Delete acccount] *********************************************************
+changed: [127.0.0.1]
+
+PLAY RECAP *********************************************************************
+127.0.0.1                  : ok=23   changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=3 

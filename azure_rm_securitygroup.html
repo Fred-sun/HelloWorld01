@@ -1,0 +1,157 @@
+fred@fred-Virtual-Machine:~/task/shenjie/test/azure_rm_securitygroup/tasks$ ansible-playbook tasks.yml 
+ [WARNING]: Skipping plugin (/usr/local/lib/python2.7/dist-
+packages/ansible/plugins/connection/accelerate.py) as it seems to be invalid:
+cannot import name key_for_hostname
+
+
+PLAY [for azure_rm_dnszone playbook test] **************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [127.0.0.1]
+
+TASK [create resource group] ***************************************************
+changed: [127.0.0.1]
+
+TASK [Prepare random number] ***************************************************
+ok: [127.0.0.1]
+
+TASK [Create security group] ***************************************************
+changed: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Gather facts by tags] ****************************************************
+ok: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Add/Update rules on existing security group] *****************************
+changed: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Test idempotence] ********************************************************
+ok: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Update tags] *************************************************************
+changed: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Purge tags] **************************************************************
+changed: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Gather facts for one accounts] *******************************************
+ok: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Gather facts for all accounts] *******************************************
+ok: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Create security group with source_address_prefixes] **********************
+changed: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Create security group with source_address_prefixes(idempontent)] *********
+ok: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Add a single one group] **************************************************
+changed: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Create Application security group 1] *************************************
+changed: [127.0.0.1]
+
+TASK [Create Application security group 2] *************************************
+changed: [127.0.0.1]
+
+TASK [Create security group with application security group] *******************
+changed: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Create security group with application security group - Idempotent] ******
+ok: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Delete security group] ***************************************************
+changed: [127.0.0.1]
+
+TASK [Delete all security groups] **********************************************
+changed: [127.0.0.1] => (item={u'etag': u'W/"7be632fc-99f9-4d67-8606-ad1d4de3e4c8"', u'name': u'sg90f88ee283', u'tags': {u'testing': u'testing', u'delete': u'on-exit'}, u'id': u'/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisuRG05/providers/Microsoft.Network/networkSecurityGroups/sg90f88ee283', u'type': u'Microsoft.Network/networkSecurityGroups', u'properties': {u'defaultSecurityRules': [{u'properties': {u'sourceAddressPrefixes': [], u'sourcePortRanges': [], u'direction': u'Inbound', u'protocol': u'*', u'description': u'Allow inbound traffic from all VMs in VNET', u'destinationPortRanges': [], u'access': u'Allow', u'destinationAddressPrefixes': [], u'destinationPortRange': u'*', u'sourceAddressPrefix': u'VirtualNetwork', u'provisioningState': u'Succeeded', u'destinationAddressPrefix': u'VirtualNetwork', u'sourcePortRange': u'*', u'priority': 65000}, u'etag': u'W/"7be632fc-99f9-4d67-8606-ad1d4de3e4c8"', u'id': u'/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisuRG05/providers/Microsoft.Network/networkSecurityGroups/sg90f88ee283/defaultSecurityRules/AllowVnetInBound', u'name': u'AllowVnetInBound'}, {u'properties': {u'sourceAddressPrefixes': [], u'sourcePortRanges': [], u'direction': u'Inbound', u'protocol': u'*', u'description': u'Allow inbound traffic from azure load balancer', u'destinationPortRanges': [], u'access': u'Allow', u'destinationAddressPrefixes': [], u'destinationPortRange': u'*', u'sourceAddressPrefix': u'AzureLoadBalancer', u'provisioningState': u'Succeeded', u'destinationAddressPrefix': u'*', u'sourcePortRange': u'*', u'priority': 65001}, u'etag': u'W/"7be632fc-99f9-4d67-8606-ad1d4de3e4c8"', u'id': u'/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisuRG05/providers/Microsoft.Network/networkSecurityGroups/sg90f88ee283/defaultSecurityRules/AllowAzureLoadBalancerInBound', u'name': u'AllowAzureLoadBalancerInBound'}, {u'properties': {u'sourceAddressPrefixes': [], u'sourcePortRanges': [], u'direction': u'Inbound', u'protocol': u'*', u'description': u'Deny all inbound traffic', u'destinationPortRanges': [], u'access': u'Deny', u'destinationAddressPrefixes': [], u'destinationPortRange': u'*', u'sourceAddressPrefix': u'*', u'provisioningState': u'Succeeded', u'destinationAddressPrefix': u'*', u'sourcePortRange': u'*', u'priority': 65500}, u'etag': u'W/"7be632fc-99f9-4d67-8606-ad1d4de3e4c8"', u'id': u'/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisuRG05/providers/Microsoft.Network/networkSecurityGroups/sg90f88ee283/defaultSecurityRules/DenyAllInBound', u'name': u'DenyAllInBound'}, {u'properties': {u'sourceAddressPrefixes': [], u'sourcePortRanges': [], u'direction': u'Outbound', u'protocol': u'*', u'description': u'Allow outbound traffic from all VMs to all VMs in VNET', u'destinationPortRanges': [], u'access': u'Allow', u'destinationAddressPrefixes': [], u'destinationPortRange': u'*', u'sourceAddressPrefix': u'VirtualNetwork', u'provisioningState': u'Succeeded', u'destinationAddressPrefix': u'VirtualNetwork', u'sourcePortRange': u'*', u'priority': 65000}, u'etag': u'W/"7be632fc-99f9-4d67-8606-ad1d4de3e4c8"', u'id': u'/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisuRG05/providers/Microsoft.Network/networkSecurityGroups/sg90f88ee283/defaultSecurityRules/AllowVnetOutBound', u'name': u'AllowVnetOutBound'}, {u'properties': {u'sourceAddressPrefixes': [], u'sourcePortRanges': [], u'direction': u'Outbound', u'protocol': u'*', u'description': u'Allow outbound traffic from all VMs to Internet', u'destinationPortRanges': [], u'access': u'Allow', u'destinationAddressPrefixes': [], u'destinationPortRange': u'*', u'sourceAddressPrefix': u'*', u'provisioningState': u'Succeeded', u'destinationAddressPrefix': u'Internet', u'sourcePortRange': u'*', u'priority': 65001}, u'etag': u'W/"7be632fc-99f9-4d67-8606-ad1d4de3e4c8"', u'id': u'/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisuRG05/providers/Microsoft.Network/networkSecurityGroups/sg90f88ee283/defaultSecurityRules/AllowInternetOutBound', u'name': u'AllowInternetOutBound'}, {u'properties': {u'sourceAddressPrefixes': [], u'sourcePortRanges': [], u'direction': u'Outbound', u'protocol': u'*', u'description': u'Deny all outbound traffic', u'destinationPortRanges': [], u'access': u'Deny', u'destinationAddressPrefixes': [], u'destinationPortRange': u'*', u'sourceAddressPrefix': u'*', u'provisioningState': u'Succeeded', u'destinationAddressPrefix': u'*', u'sourcePortRange': u'*', u'priority': 65500}, u'etag': u'W/"7be632fc-99f9-4d67-8606-ad1d4de3e4c8"', u'id': u'/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisuRG05/providers/Microsoft.Network/networkSecurityGroups/sg90f88ee283/defaultSecurityRules/DenyAllOutBound', u'name': u'DenyAllOutBound'}], u'resourceGuid': u'5251e799-78ee-4da8-9512-3179465f5565', u'securityRules': [{u'properties': {u'sourceAddressPrefixes': [], u'sourcePortRanges': [], u'direction': u'Inbound', u'protocol': u'Tcp', u'destinationPortRanges': [], u'access': u'Allow', u'destinationAddressPrefixes': [], u'destinationPortRange': u'22', u'sourceAddressPrefix': u'174.108.158.0/24', u'provisioningState': u'Succeeded', u'destinationAddressPrefix': u'*', u'sourcePortRange': u'*', u'priority': 101}, u'etag': u'W/"7be632fc-99f9-4d67-8606-ad1d4de3e4c8"', u'id': u'/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisuRG05/providers/Microsoft.Network/networkSecurityGroups/sg90f88ee283/securityRules/AllowSSH', u'name': u'AllowSSH'}, {u'properties': {u'sourceAddressPrefixes': [], u'sourcePortRanges': [], u'direction': u'Inbound', u'protocol': u'Tcp', u'destinationPortRanges': [], u'access': u'Allow', u'destinationAddressPrefixes': [], u'destinationPortRange': u'22-23', u'sourceAddressPrefix': u'174.109.158.0/24', u'provisioningState': u'Succeeded', u'destinationAddressPrefix': u'*', u'sourcePortRange': u'*', u'priority': 102}, u'etag': u'W/"7be632fc-99f9-4d67-8606-ad1d4de3e4c8"', u'id': u'/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisuRG05/providers/Microsoft.Network/networkSecurityGroups/sg90f88ee283/securityRules/AllowSSHFromHome', u'name': u'AllowSSHFromHome'}, {u'properties': {u'sourceAddressPrefixes': [], u'sourcePortRanges': [], u'direction': u'Inbound', u'protocol': u'Tcp', u'destinationPortRanges': [], u'access': u'Deny', u'destinationAddressPrefixes': [], u'destinationPortRange': u'22', u'sourceAddressPrefix': u'*', u'provisioningState': u'Succeeded', u'destinationAddressPrefix': u'*', u'sourcePortRange': u'*', u'priority': 100}, u'etag': u'W/"7be632fc-99f9-4d67-8606-ad1d4de3e4c8"', u'id': u'/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisuRG05/providers/Microsoft.Network/networkSecurityGroups/sg90f88ee283/securityRules/DenySSH', u'name': u'DenySSH'}], u'provisioningState': u'Succeeded'}, u'location': u'eastus'})
+
+TASK [Should have no security groups remaining] ********************************
+ok: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP *********************************************************************
+127.0.0.1                  : ok=35   changed=12   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0  

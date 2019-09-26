@@ -1,0 +1,372 @@
+fred@fred-Virtual-Machine:~/task/shenjie/test/azure_rm_dnszone/tasks$ ansible-playbook  tasks.yml 
+ [WARNING]: Skipping plugin (/usr/local/lib/python2.7/dist-
+packages/ansible/plugins/connection/accelerate.py) as it seems to be invalid:
+cannot import name key_for_hostname
+
+
+PLAY [for azure_rm_dnszone playbook test] **************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [127.0.0.1]
+
+TASK [create resource group] ***************************************************
+changed: [127.0.0.1]
+
+TASK [Create random domain name] ***********************************************
+ok: [127.0.0.1]
+
+TASK [Create a DNS zone (check mode)] ******************************************
+ [WARNING]: Azure API profile latest does not define an entry for
+DnsManagementClient
+
+changed: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Create a DNS zone] *******************************************************
+changed: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Update DNS zone with tags] ***********************************************
+changed: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Retrieve DNS Zone Facts] *************************************************
+ok: [127.0.0.1]
+
+TASK [Assert that facts module returned result] ********************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Create virtual network] **************************************************
+changed: [127.0.0.1] => (item=d9bab5a237953b9a65258registration1)
+changed: [127.0.0.1] => (item=d9bab5a237953b9a65258resolution1)
+changed: [127.0.0.1] => (item=d9bab5a237953b9a65258registration2)
+changed: [127.0.0.1] => (item=d9bab5a237953b9a65258resolution2)
+
+TASK [Create private dns zone] *************************************************
+changed: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Update private dns zone] *************************************************
+changed: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Test idempotent] *********************************************************
+ok: [127.0.0.1] => (item=d9bab5a237953b9a65258.com)
+ok: [127.0.0.1] => (item=d9bab5a237953b9a65258.private)
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => (item={'failed': False, u'state': {u'name': u'd9bab5a237953b9a65258.com', u'tags': {u'test': u'modified'}, u'resolution_virtual_networks': None, u'number_of_record_sets': 2, u'registration_virtual_networks': None, u'name_servers': [u'ns1-09.azure-dns.com.', u'ns2-09.azure-dns.net.', u'ns3-09.azure-dns.org.', u'ns4-09.azure-dns.info.'], u'type': u'public', u'id': u'/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisurg02/providers/Microsoft.Network/dnszones/d9bab5a237953b9a65258.com'}, 'ansible_loop_var': u'item', 'item': u'd9bab5a237953b9a65258.com', u'invocation': {u'module_args': {u'profile': None, u'registration_virtual_networks': None, u'resource_group': u'v-xisuRG02', u'tags': None, u'cloud_environment': u'AzureCloud', u'state': u'present', u'client_id': None, u'auth_source': None, u'adfs_authority_url': None, u'password': None, u'tenant': None, u'name': u'd9bab5a237953b9a65258.com', u'resolution_virtual_networks': None, u'append_tags': True, u'ad_user': None, u'secret': None, u'cert_validation_mode': None, u'api_profile': u'latest', u'subscription_id': None, u'type': None}}, u'changed': False, u'check_mode': False}) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": {
+        "ansible_loop_var": "item", 
+        "changed": false, 
+        "check_mode": false, 
+        "failed": false, 
+        "invocation": {
+            "module_args": {
+                "ad_user": null, 
+                "adfs_authority_url": null, 
+                "api_profile": "latest", 
+                "append_tags": true, 
+                "auth_source": null, 
+                "cert_validation_mode": null, 
+                "client_id": null, 
+                "cloud_environment": "AzureCloud", 
+                "name": "d9bab5a237953b9a65258.com", 
+                "password": null, 
+                "profile": null, 
+                "registration_virtual_networks": null, 
+                "resolution_virtual_networks": null, 
+                "resource_group": "v-xisuRG02", 
+                "secret": null, 
+                "state": "present", 
+                "subscription_id": null, 
+                "tags": null, 
+                "tenant": null, 
+                "type": null
+            }
+        }, 
+        "item": "d9bab5a237953b9a65258.com", 
+        "state": {
+            "id": "/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisurg02/providers/Microsoft.Network/dnszones/d9bab5a237953b9a65258.com", 
+            "name": "d9bab5a237953b9a65258.com", 
+            "name_servers": [
+                "ns1-09.azure-dns.com.", 
+                "ns2-09.azure-dns.net.", 
+                "ns3-09.azure-dns.org.", 
+                "ns4-09.azure-dns.info."
+            ], 
+            "number_of_record_sets": 2, 
+            "registration_virtual_networks": null, 
+            "resolution_virtual_networks": null, 
+            "tags": {
+                "test": "modified"
+            }, 
+            "type": "public"
+        }
+    }, 
+    "msg": "All assertions passed"
+}
+ok: [127.0.0.1] => (item={'failed': False, u'state': {u'name': u'd9bab5a237953b9a65258.private', u'tags': {}, u'resolution_virtual_networks': [u'/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisuRG02/providers/Microsoft.Network/virtualNetworks/d9bab5a237953b9a65258resolution1'], u'number_of_record_sets': 1, u'registration_virtual_networks': [u'/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisuRG02/providers/Microsoft.Network/virtualNetworks/d9bab5a237953b9a65258registration1'], u'name_servers': None, u'type': u'private', u'id': u'/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisurg02/providers/Microsoft.Network/dnszones/d9bab5a237953b9a65258.private'}, 'ansible_loop_var': u'item', 'item': u'd9bab5a237953b9a65258.private', u'invocation': {u'module_args': {u'profile': None, u'registration_virtual_networks': None, u'resource_group': u'v-xisuRG02', u'tags': None, u'cloud_environment': u'AzureCloud', u'state': u'present', u'client_id': None, u'auth_source': None, u'adfs_authority_url': None, u'password': None, u'tenant': None, u'name': u'd9bab5a237953b9a65258.private', u'resolution_virtual_networks': None, u'append_tags': True, u'ad_user': None, u'secret': None, u'cert_validation_mode': None, u'api_profile': u'latest', u'subscription_id': None, u'type': None}}, u'changed': False, u'check_mode': False}) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": {
+        "ansible_loop_var": "item", 
+        "changed": false, 
+        "check_mode": false, 
+        "failed": false, 
+        "invocation": {
+            "module_args": {
+                "ad_user": null, 
+                "adfs_authority_url": null, 
+                "api_profile": "latest", 
+                "append_tags": true, 
+                "auth_source": null, 
+                "cert_validation_mode": null, 
+                "client_id": null, 
+                "cloud_environment": "AzureCloud", 
+                "name": "d9bab5a237953b9a65258.private", 
+                "password": null, 
+                "profile": null, 
+                "registration_virtual_networks": null, 
+                "resolution_virtual_networks": null, 
+                "resource_group": "v-xisuRG02", 
+                "secret": null, 
+                "state": "present", 
+                "subscription_id": null, 
+                "tags": null, 
+                "tenant": null, 
+                "type": null
+            }
+        }, 
+        "item": "d9bab5a237953b9a65258.private", 
+        "state": {
+            "id": "/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisurg02/providers/Microsoft.Network/dnszones/d9bab5a237953b9a65258.private", 
+            "name": "d9bab5a237953b9a65258.private", 
+            "name_servers": null, 
+            "number_of_record_sets": 1, 
+            "registration_virtual_networks": [
+                "/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisuRG02/providers/Microsoft.Network/virtualNetworks/d9bab5a237953b9a65258registration1"
+            ], 
+            "resolution_virtual_networks": [
+                "/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisuRG02/providers/Microsoft.Network/virtualNetworks/d9bab5a237953b9a65258resolution1"
+            ], 
+            "tags": {}, 
+            "type": "private"
+        }
+    }, 
+    "msg": "All assertions passed"
+}
+
+TASK [create "A" record set with multiple records] *****************************
+changed: [127.0.0.1]
+
+TASK [Assert that A record set was created] ************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [re-run "A" record with same values] **************************************
+ok: [127.0.0.1]
+
+TASK [Assert that A record set was not changed] ********************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Update "A" record set with additional record] ****************************
+changed: [127.0.0.1]
+
+TASK [Assert that new record was appended] *************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [re-update "A" record set with additional record] *************************
+ok: [127.0.0.1]
+
+TASK [Assert that A record set was not changed] ********************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Remove 1 record from record set] *****************************************
+changed: [127.0.0.1]
+
+TASK [Assert that record was deleted] ******************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Check_mode test] *********************************************************
+changed: [127.0.0.1]
+
+TASK [Assert that check_mode returns new state] ********************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [create SRV records in a new record set] **********************************
+changed: [127.0.0.1]
+
+TASK [Assert that SRV record set was created] **********************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [create TXT records in a new record set] **********************************
+changed: [127.0.0.1]
+
+TASK [Assert that TXT record set was created] **********************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Retrieve DNS Record Set Facts for single Record Set] *********************
+ok: [127.0.0.1]
+
+TASK [Assert that facts module returned result for single Record Set] **********
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Retrieve DNS Record Set Facts for all Record Sets] ***********************
+ok: [127.0.0.1]
+
+TASK [Assert that facts module returned result for all Record Sets] ************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [delete all record sets  except for @] ************************************
+skipping: [127.0.0.1] => (item={u'record_type': u'NS', u'time_to_live': 172800, u'records': [{u'nsdname': u'ns1-09.azure-dns.com.'}, {u'nsdname': u'ns2-09.azure-dns.net.'}, {u'nsdname': u'ns3-09.azure-dns.org.'}, {u'nsdname': u'ns4-09.azure-dns.info.'}], u'id': u'/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisurg02/providers/Microsoft.Network/dnszones/d9bab5a237953b9a65258.com/NS/@', u'provisioning_state': u'Succeeded', u'fqdn': u'd9bab5a237953b9a65258.com.', u'relative_name': u'@'}) 
+skipping: [127.0.0.1] => (item={u'record_type': u'SOA', u'time_to_live': 3600, u'records': [{u'retry_time': 300, u'host': u'ns1-09.azure-dns.com.', u'refresh_time': 3600, u'expire_time': 2419200, u'serial_number': 1, u'email': u'azuredns-hostmaster.microsoft.com', u'minimum_ttl': 300}], u'id': u'/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisurg02/providers/Microsoft.Network/dnszones/d9bab5a237953b9a65258.com/SOA/@', u'provisioning_state': u'Succeeded', u'fqdn': u'd9bab5a237953b9a65258.com.', u'relative_name': u'@'}) 
+changed: [127.0.0.1] => (item={u'record_type': u'SRV', u'time_to_live': 7200, u'records': [{u'priority': 20, u'port': 5060, u'weight': 10, u'target': u'sip.d9bab5a237953b9a65258.com'}], u'id': u'/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisurg02/providers/Microsoft.Network/dnszones/d9bab5a237953b9a65258.com/SRV/_sip._tcp.d9bab5a237953b9a65258.com', u'provisioning_state': u'Succeeded', u'fqdn': u'_sip._tcp.d9bab5a237953b9a65258.com.d9bab5a237953b9a65258.com.', u'relative_name': u'_sip._tcp.d9bab5a237953b9a65258.com'})
+changed: [127.0.0.1] => (item={u'record_type': u'TXT', u'time_to_live': 3600, u'records': [{u'value': [u'v=spf1 a -all']}, {u'value': [u'foo']}, {u'value': [u'bar', u'baz']}], u'id': u'/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisurg02/providers/Microsoft.Network/dnszones/d9bab5a237953b9a65258.com/TXT/_txt.d9bab5a237953b9a65258.com', u'provisioning_state': u'Succeeded', u'fqdn': u'_txt.d9bab5a237953b9a65258.com.d9bab5a237953b9a65258.com.', u'relative_name': u'_txt.d9bab5a237953b9a65258.com'})
+changed: [127.0.0.1] => (item={u'record_type': u'A', u'time_to_live': 3600, u'records': [{u'ipv4_address': u'192.168.100.102'}, {u'ipv4_address': u'192.168.100.103'}, {u'ipv4_address': u'192.168.100.101'}], u'id': u'/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisurg02/providers/Microsoft.Network/dnszones/d9bab5a237953b9a65258.com/A/www', u'provisioning_state': u'Succeeded', u'fqdn': u'www.d9bab5a237953b9a65258.com.', u'relative_name': u'www'})
+
+TASK [Assert that record set deleted] ******************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Retrieve DNS Record Set Facts for all Record Sets] ***********************
+ok: [127.0.0.1]
+
+TASK [Assert all record set deleted] *******************************************
+ok: [127.0.0.1] => (item={u'record_type': u'NS', u'time_to_live': 172800, u'records': [{u'nsdname': u'ns1-09.azure-dns.com.'}, {u'nsdname': u'ns2-09.azure-dns.net.'}, {u'nsdname': u'ns3-09.azure-dns.org.'}, {u'nsdname': u'ns4-09.azure-dns.info.'}], u'id': u'/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisurg02/providers/Microsoft.Network/dnszones/d9bab5a237953b9a65258.com/NS/@', u'provisioning_state': u'Succeeded', u'fqdn': u'd9bab5a237953b9a65258.com.', u'relative_name': u'@'}) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": {
+        "fqdn": "d9bab5a237953b9a65258.com.", 
+        "id": "/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisurg02/providers/Microsoft.Network/dnszones/d9bab5a237953b9a65258.com/NS/@", 
+        "provisioning_state": "Succeeded", 
+        "record_type": "NS", 
+        "records": [
+            {
+                "nsdname": "ns1-09.azure-dns.com."
+            }, 
+            {
+                "nsdname": "ns2-09.azure-dns.net."
+            }, 
+            {
+                "nsdname": "ns3-09.azure-dns.org."
+            }, 
+            {
+                "nsdname": "ns4-09.azure-dns.info."
+            }
+        ], 
+        "relative_name": "@", 
+        "time_to_live": 172800
+    }, 
+    "msg": "All assertions passed"
+}
+ok: [127.0.0.1] => (item={u'record_type': u'SOA', u'time_to_live': 3600, u'records': [{u'retry_time': 300, u'host': u'ns1-09.azure-dns.com.', u'refresh_time': 3600, u'expire_time': 2419200, u'serial_number': 1, u'email': u'azuredns-hostmaster.microsoft.com', u'minimum_ttl': 300}], u'id': u'/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisurg02/providers/Microsoft.Network/dnszones/d9bab5a237953b9a65258.com/SOA/@', u'provisioning_state': u'Succeeded', u'fqdn': u'd9bab5a237953b9a65258.com.', u'relative_name': u'@'}) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": {
+        "fqdn": "d9bab5a237953b9a65258.com.", 
+        "id": "/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisurg02/providers/Microsoft.Network/dnszones/d9bab5a237953b9a65258.com/SOA/@", 
+        "provisioning_state": "Succeeded", 
+        "record_type": "SOA", 
+        "records": [
+            {
+                "email": "azuredns-hostmaster.microsoft.com", 
+                "expire_time": 2419200, 
+                "host": "ns1-09.azure-dns.com.", 
+                "minimum_ttl": 300, 
+                "refresh_time": 3600, 
+                "retry_time": 300, 
+                "serial_number": 1
+            }
+        ], 
+        "relative_name": "@", 
+        "time_to_live": 3600
+    }, 
+    "msg": "All assertions passed"
+}
+
+TASK [(idempotence test) re-run record set absent] *****************************
+ok: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Delete DNS zone] *********************************************************
+changed: [127.0.0.1] => (item=d9bab5a237953b9a65258.com)
+changed: [127.0.0.1] => (item=d9bab5a237953b9a65258.private)
+
+TASK [Delete DNS zone (idempotent)] ********************************************
+ok: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP *********************************************************************
+127.0.0.1                  : ok=47   changed=15   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0  

@@ -1,0 +1,302 @@
+fred@fred-Virtual-Machine:~/task/shenjie/test/azure_rm_networkinterface/tasks$ ansible-playbook tasks.yml 
+ [WARNING]: Skipping plugin (/usr/local/lib/python2.7/dist-
+packages/ansible/plugins/connection/accelerate.py) as it seems to be invalid: cannot import
+name key_for_hostname
+
+
+PLAY [for azure_rm_dnszone playbook test] **************************************************
+
+TASK [Gathering Facts] *********************************************************************
+ok: [127.0.0.1]
+
+TASK [create resource group] ***************************************************************
+ok: [127.0.0.1]
+
+TASK [Prepare random number] ***************************************************************
+ok: [127.0.0.1]
+
+TASK [Create virtual network] **************************************************************
+changed: [127.0.0.1]
+
+TASK [Add subnet] **************************************************************************
+changed: [127.0.0.1]
+
+TASK [create public ip] ********************************************************************
+changed: [127.0.0.1]
+
+TASK [create load balancer with multiple parameters] ***************************************
+changed: [127.0.0.1]
+
+TASK [Create most simple NIC with virtual_network id (check mode)] *************************
+[DEPRECATION WARNING]: Setting ip_configuration flatten is deprecated and will be removed. 
+Using ip_configurations list to define the ip configuration. This feature will be removed 
+in version 2.9. Deprecation warnings can be disabled by setting deprecation_warnings=False 
+in ansible.cfg.
+changed: [127.0.0.1]
+
+TASK [assert] ******************************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Create most simple NIC with virtual_network resource_group] **************************
+changed: [127.0.0.1]
+
+TASK [assert] ******************************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Get fact of the new created NIC] *****************************************************
+ok: [127.0.0.1]
+
+TASK [assert] ******************************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Create most simple NIC with ip configurations (idempotent)] **************************
+ok: [127.0.0.1]
+
+TASK [assert] ******************************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Create most simple NIC (idempotent)] *************************************************
+ok: [127.0.0.1]
+
+TASK [assert] ******************************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Update security group (check mode)] **************************************************
+changed: [127.0.0.1]
+
+TASK [assert] ******************************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Update public ip address (check mode)] ***********************************************
+changed: [127.0.0.1]
+
+TASK [assert] ******************************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Update accelerated networking (check mode)] ******************************************
+changed: [127.0.0.1]
+
+TASK [assert] ******************************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Update IP forwarding networking (check mode)] ****************************************
+changed: [127.0.0.1]
+
+TASK [assert] ******************************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Update dns server (check mode)] ******************************************************
+changed: [127.0.0.1]
+
+TASK [assert] ******************************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Update NIC] **************************************************************************
+changed: [127.0.0.1]
+
+TASK [assert] ******************************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Complicated NIC (idempontent)] *******************************************************
+ok: [127.0.0.1]
+
+TASK [assert] ******************************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Get fact of the new created NIC] *****************************************************
+ok: [127.0.0.1]
+
+TASK [assert] ******************************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Remove one dns server and ip configuration] ******************************************
+changed: [127.0.0.1]
+
+TASK [assert] ******************************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Create application security group(check mode)] ***************************************
+changed: [127.0.0.1]
+
+TASK [Assert check mode creation] **********************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Create Application security group] ***************************************************
+changed: [127.0.0.1]
+
+TASK [Assert application security group creation] ******************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Get Application security group] ******************************************************
+ok: [127.0.0.1]
+
+TASK [Assert facts] ************************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Create application security group (idempotent)] **************************************
+ok: [127.0.0.1]
+
+TASK [Assert idempotent] *******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Update application security group] ***************************************************
+changed: [127.0.0.1]
+
+TASK [Assert update] ***********************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Create Application security group in secondary resource group] ***********************
+changed: [127.0.0.1]
+
+TASK [Create Nic with application security groups] *****************************************
+changed: [127.0.0.1]
+
+TASK [assert creation succeeded] ***********************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Create Nic with application security groups (idempotent)] ****************************
+ok: [127.0.0.1]
+
+TASK [assert idempotent] *******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Update Nic with application security groups] *****************************************
+changed: [127.0.0.1]
+
+TASK [assert update succeeded] *************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Get fact of the new created NIC] *****************************************************
+ok: [127.0.0.1]
+
+TASK [assert] ******************************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Delete the NIC (check mode)] *********************************************************
+changed: [127.0.0.1]
+
+TASK [assert] ******************************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Delete the NIC] **********************************************************************
+changed: [127.0.0.1]
+
+TASK [assert] ******************************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Delete the NIC (idempotent)] *********************************************************
+ok: [127.0.0.1]
+
+TASK [assert] ******************************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [delete load balancer] ****************************************************************
+changed: [127.0.0.1]
+
+TASK [delete public ip] ********************************************************************
+changed: [127.0.0.1]
+
+TASK [Delete the NIC] **********************************************************************
+changed: [127.0.0.1]
+
+TASK [Delete the application security group (check mode)] **********************************
+changed: [127.0.0.1]
+
+TASK [Assert delete check mode] ************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Delete the application security group] ***********************************************
+changed: [127.0.0.1]
+
+TASK [Assert the deletion] *****************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Delete second application security group] ********************************************
+changed: [127.0.0.1]
+
+PLAY RECAP *********************************************************************************
+127.0.0.1                  : ok=68   changed=27   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0 

@@ -1,0 +1,97 @@
+fred@fred-Virtual-Machine:~/task/shenjie/test/azure_rm_publicipaddress/tasks$ ansible-playbook  tasks.yml 
+ [WARNING]: Skipping plugin (/usr/local/lib/python2.7/dist-
+packages/ansible/plugins/connection/accelerate.py) as it seems to be invalid:
+cannot import name key_for_hostname
+
+
+PLAY [for azure_rm_dnszone playbook test] **************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [127.0.0.1]
+
+TASK [create resource group] ***************************************************
+changed: [127.0.0.1]
+
+TASK [Create domain name] ******************************************************
+ok: [127.0.0.1]
+
+TASK [Remove public ip] ********************************************************
+ok: [127.0.0.1]
+
+TASK [Create public ip] ********************************************************
+changed: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Should be idempotent] ****************************************************
+ok: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Update tags] *************************************************************
+changed: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Gather facts, filtering by tag] ******************************************
+ok: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Purge all tags] **********************************************************
+changed: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Gather facts for a public ip] ********************************************
+ok: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Gather facts for all public ips] *****************************************
+ok: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Remove public ip] ********************************************************
+changed: [127.0.0.1]
+
+TASK [Gather facts for a public ip] ********************************************
+ok: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP *********************************************************************
+127.0.0.1                  : ok=21   changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

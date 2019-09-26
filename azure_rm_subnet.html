@@ -1,0 +1,145 @@
+fred@fred-Virtual-Machine:~/task/shenjie/test/azure_rm_subnet/tasks$ ansible-playbook  tasks.yml 
+ [WARNING]: Skipping plugin (/usr/local/lib/python2.7/dist-
+packages/ansible/plugins/connection/accelerate.py) as it seems to be invalid: cannot import
+name key_for_hostname
+
+
+PLAY [for azure_rm_dnszone playbook test] **************************************************
+
+TASK [Gathering Facts] *********************************************************************
+ok: [127.0.0.1]
+
+TASK [create resource group] ***************************************************************
+ok: [127.0.0.1]
+
+TASK [Create virtual network] **************************************************************
+ok: [127.0.0.1]
+
+TASK [Create route table] ******************************************************************
+ok: [127.0.0.1]
+
+TASK [Remove subnet] ***********************************************************************
+changed: [127.0.0.1]
+
+TASK [Catch invalid cidr] ******************************************************************
+fatal: [127.0.0.1]: FAILED! => {"changed": false, "msg": "Invalid address_prefix_cidr value 10.1.0/24"}
+...ignoring
+
+TASK [assert] ******************************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Add the subnet back] *****************************************************************
+changed: [127.0.0.1]
+
+TASK [assert] ******************************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Add the subnet back (idempontent)] ***************************************************
+ok: [127.0.0.1]
+
+TASK [assert] ******************************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Create network security group] *******************************************************
+ok: [127.0.0.1]
+
+TASK [Update the subnet] *******************************************************************
+changed: [127.0.0.1]
+
+TASK [Should be idempotent] ****************************************************************
+ok: [127.0.0.1]
+
+TASK [assert] ******************************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Create network security group in another resource group] *****************************
+changed: [127.0.0.1]
+
+TASK [Update the subnet] *******************************************************************
+changed: [127.0.0.1]
+
+TASK [assert] ******************************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Update the subnet (idempotent)] ******************************************************
+ok: [127.0.0.1]
+
+TASK [assert] ******************************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Get subnet facts] ********************************************************************
+ok: [127.0.0.1]
+
+TASK [debug] *******************************************************************************
+ok: [127.0.0.1] => {
+    "output": {
+        "changed": false, 
+        "failed": false, 
+        "subnets": [
+            {
+                "address_prefix_cidr": "10.1.0.0/16", 
+                "id": "/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisuRG07/providers/Microsoft.Network/virtualNetworks/My_Virtual_Network/subnets/foobar", 
+                "name": "foobar", 
+                "provisioning_state": "Succeeded", 
+                "resource_group": "v-xisuRG07", 
+                "route_table": "/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisuRG07/providers/Microsoft.Network/routeTables/routetableforsubnet", 
+                "security_group": "/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisuRG/providers/Microsoft.Network/networkSecurityGroups/secgroupfoo", 
+                "service_endpoints": [
+                    {
+                        "locations": [
+                            "eastus"
+                        ], 
+                        "provisioning_state": "Succeeded", 
+                        "service": "Microsoft.Sql"
+                    }
+                ], 
+                "virtual_network_name": "My_Virtual_Network"
+            }
+        ]
+    }
+}
+
+TASK [Assert that facts are returned] ******************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Remove subnet] ***********************************************************************
+changed: [127.0.0.1]
+
+TASK [Remove subnet (idempotent)] **********************************************************
+ok: [127.0.0.1]
+
+TASK [assert] ******************************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Remove security group] ***************************************************************
+changed: [127.0.0.1]
+
+TASK [Remove virtual network] **************************************************************
+changed: [127.0.0.1]
+
+PLAY RECAP *********************************************************************************
+127.0.0.1                  : ok=28   changed=8    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1  

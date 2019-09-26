@@ -1,0 +1,131 @@
+fred@fred-Virtual-Machine:~/task/shenjie/test/azure_rm_virtualnetwork/tasks$ ansible-playbook  tasks.yml 
+ [WARNING]: Skipping plugin (/usr/local/lib/python2.7/dist-
+packages/ansible/plugins/connection/accelerate.py) as it seems to be invalid:
+cannot import name key_for_hostname
+
+
+PLAY [for azure_rm_dnszone playbook test] **************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [127.0.0.1]
+
+TASK [create resource group] ***************************************************
+changed: [127.0.0.1]
+
+TASK [Prepare random number] ***************************************************
+ok: [127.0.0.1]
+
+TASK [Delete virtual network, if it exists] ************************************
+ok: [127.0.0.1]
+
+TASK [Create virtual network] **************************************************
+changed: [127.0.0.1]
+
+TASK [Create virtual network] **************************************************
+changed: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Attach a subnet] *********************************************************
+changed: [127.0.0.1]
+
+TASK [Gather facts by name, tags] **********************************************
+ok: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Gather facts by resource group, tags] ************************************
+ok: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Gather facts by tags] ****************************************************
+ok: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Should be idempotent] ****************************************************
+ok: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Update tags] *************************************************************
+changed: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Purge tags] **************************************************************
+changed: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Should require address_prefixes_cidr when purge_address_prefixes] ********
+fatal: [127.0.0.1]: FAILED! => {"changed": false, "msg": "purge_address_prefixes is True but all of the following are missing: address_prefixes_cidr"}
+...ignoring
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Purge address prefixes] **************************************************
+changed: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Purge DNS servers] *******************************************************
+changed: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Gather facts] ************************************************************
+ok: [127.0.0.1]
+
+TASK [assert] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Delete virtual network] **************************************************
+changed: [127.0.0.1]
+
+PLAY RECAP *********************************************************************
+127.0.0.1                  : ok=29   changed=9    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1 
