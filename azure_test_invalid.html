@@ -1,0 +1,32 @@
+fred@fred-Virtual-Machine:~/task/shenjie/test/azure_rm_virtualmachine/tasks$ ansible-playbook  t.yml 
+[WARNING]: Skipping plugin (/usr/local/lib/python2.7/dist-
+packages/ansible/plugins/connection/accelerate.py) as it seems to be invalid: cannot import name
+key_for_hostname
+
+[WARNING]: While constructing a mapping from
+/home/fred/task/shenjie/test/azure_rm_virtualmachine/tasks/var.yml, line 1, column 1, found a
+duplicate dict key (resource_group_secondary). Using last defined value only.
+
+
+PLAY [for azure_rm_dnszone playbook test] ********************************************************
+
+TASK [Gathering Facts] ***************************************************************************
+ok: [127.0.0.1]
+
+TASK [create resource group] *********************************************************************
+changed: [127.0.0.1]
+
+TASK [Assert error thrown with invalid image dict] ***********************************************
+ok: [127.0.0.1]
+
+TASK [Assert error thrown with invalid image type] ***********************************************
+ok: [127.0.0.1]
+
+TASK [Assert error finding missing custom image] *************************************************
+ok: [127.0.0.1]
+
+TASK [Assert error finding missing custom image (dict style)] ************************************
+ok: [127.0.0.1]
+
+PLAY RECAP ***************************************************************************************
+127.0.0.1                  : ok=6    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
