@@ -1,0 +1,73 @@
+fred@fred-Virtual-Machine:~/task/shenjie/test/azure_rm_virtualmachine/tasks$ ansible-playbook  task1.yml 
+ [WARNING]: Skipping plugin (/usr/local/lib/python2.7/dist-
+packages/ansible/plugins/connection/accelerate.py) as it seems to be invalid: cannot import
+name key_for_hostname
+
+ [WARNING]: While constructing a mapping from
+/home/fred/task/shenjie/test/azure_rm_virtualmachine/tasks/var.yml, line 1, column 1, found a
+duplicate dict key (resource_group_secondary). Using last defined value only.
+
+
+PLAY [for azure_rm_dnszone playbook test] ****************************************************
+
+TASK [Gathering Facts] ***********************************************************************
+ok: [127.0.0.1]
+
+TASK [create resource group] *****************************************************************
+ok: [127.0.0.1]
+
+TASK [include_tasks] *************************************************************************
+included: /home/fred/task/shenjie/test/azure_rm_virtualmachine/tasks/setup.yml for 127.0.0.1
+
+TASK [debug] *********************************************************************************
+ok: [127.0.0.1] => {
+    "msg": "UID is 7"
+}
+
+TASK [SETUP | Create storage account] ********************************************************
+ok: [127.0.0.1]
+
+TASK [SETUP | Create availability set] *******************************************************
+ok: [127.0.0.1]
+
+TASK [SETUP | Create virtual network] ********************************************************
+ok: [127.0.0.1]
+
+TASK [SETUP | Create subnet] *****************************************************************
+ok: [127.0.0.1]
+
+TASK [Create minimal VM with defaults] *******************************************************
+changed: [127.0.0.1]
+
+TASK [Delete VM] *****************************************************************************
+changed: [127.0.0.1]
+
+TASK [Query auto created NIC] ****************************************************************
+ok: [127.0.0.1]
+
+TASK [Query auto created security group] *****************************************************
+ok: [127.0.0.1]
+
+TASK [Query auto created public IP] **********************************************************
+ok: [127.0.0.1]
+
+TASK [Assert that autocreated resources were deleted] ****************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Destroy subnet] ************************************************************************
+changed: [127.0.0.1]
+
+TASK [Destroy virtual network] ***************************************************************
+changed: [127.0.0.1]
+
+TASK [Destroy availability set] **************************************************************
+changed: [127.0.0.1]
+
+TASK [Destroy storage account] ***************************************************************
+changed: [127.0.0.1]
+
+PLAY RECAP ***********************************************************************************
+127.0.0.1                  : ok=18   changed=6    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0  

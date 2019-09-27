@@ -1,0 +1,105 @@
+fred@fred-Virtual-Machine:~/task/shenjie/test/azure_rm_virtualmachine/tasks$ ansible-playbook  task1.yml 
+ [WARNING]: Skipping plugin (/usr/local/lib/python2.7/dist-
+packages/ansible/plugins/connection/accelerate.py) as it seems to be invalid: cannot import
+name key_for_hostname
+
+ [WARNING]: While constructing a mapping from
+/home/fred/task/shenjie/test/azure_rm_virtualmachine/tasks/var.yml, line 1, column 1, found a
+duplicate dict key (resource_group_secondary). Using last defined value only.
+
+
+PLAY [for azure_rm_dnszone playbook test] ****************************************************
+
+TASK [Gathering Facts] ***********************************************************************
+ok: [127.0.0.1]
+
+TASK [create resource group] *****************************************************************
+ok: [127.0.0.1]
+
+TASK [include_tasks] *************************************************************************
+included: /home/fred/task/shenjie/test/azure_rm_virtualmachine/tasks/setup.yml for 127.0.0.1
+
+TASK [debug] *********************************************************************************
+ok: [127.0.0.1] => {
+    "msg": "UID is 7"
+}
+
+TASK [SETUP | Create storage account] ********************************************************
+ok: [127.0.0.1]
+
+TASK [SETUP | Create availability set] *******************************************************
+ok: [127.0.0.1]
+
+TASK [SETUP | Create virtual network] ********************************************************
+ok: [127.0.0.1]
+
+TASK [SETUP | Create subnet] *****************************************************************
+ok: [127.0.0.1]
+
+TASK [Create virtual network in secondary resource group] ************************************
+ok: [127.0.0.1]
+
+TASK [Create subnet in secondary resource group] *********************************************
+ok: [127.0.0.1]
+
+TASK [Create NICs for dual NIC VM in secondary resource group] *******************************
+changed: [127.0.0.1] => (item={u'name': u'testnic01', u'resource_group': u'v-xisuRG'})
+ok: [127.0.0.1] => (item={u'name': u'testnic02', u'resource_group': u'v-xisuRG'})
+[DEPRECATION WARNING]: Setting ip_configuration flatten is deprecated and will be removed. 
+Using ip_configurations list to define the ip configuration. This feature will be removed in 
+version 2.9. Deprecation warnings can be disabled by setting deprecation_warnings=False in 
+ansible.cfg.
+
+TASK [Create virtual machine with two NICs] **************************************************
+changed: [127.0.0.1]
+
+TASK [Ensure VM was created properly] ********************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Retrieve VM facts (filtering by name)] *************************************************
+ok: [127.0.0.1]
+
+TASK [Ensure facts module returned the second VM] ********************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Retrieve facts by tags] ****************************************************************
+ok: [127.0.0.1]
+
+TASK [Assert that facts module returned the second VM] ***************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Should be idempotent with a dual NICs] *************************************************
+ok: [127.0.0.1]
+
+TASK [Ensure nothing changed] ****************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Generalize VM] *************************************************************************
+changed: [127.0.0.1]
+
+TASK [Gather facts and check if machine is generalized] **************************************
+ok: [127.0.0.1]
+
+TASK [Ensure power state is generalized] *****************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Delete dual NIC VM] ********************************************************************
+changed: [127.0.0.1]
+
+PLAY RECAP ***********************************************************************************
+127.0.0.1                  : ok=23   changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0  

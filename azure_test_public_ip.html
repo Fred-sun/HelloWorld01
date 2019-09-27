@@ -1,0 +1,191 @@
+fred@fred-Virtual-Machine:~/task/shenjie/test/azure_rm_virtualmachine/tasks$ ansible-playbook  task1.yml 
+[WARNING]: Skipping plugin (/usr/local/lib/python2.7/dist-
+packages/ansible/plugins/connection/accelerate.py) as it seems to be invalid: cannot import
+name key_for_hostname
+
+[WARNING]: While constructing a mapping from
+/home/fred/task/shenjie/test/azure_rm_virtualmachine/tasks/var.yml, line 1, column 1, found a
+duplicate dict key (resource_group_secondary). Using last defined value only.
+
+[DEPRECATION WARNING]: azure_rm_virtualmachine_facts is kept for backwards compatibility but 
+usage is discouraged. The module documentation details page may explain more about this 
+rationale.. This feature will be removed in a future release. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+[DEPRECATION WARNING]: azure_rm_networkinterface_facts is kept for backwards compatibility 
+but usage is discouraged. The module documentation details page may explain more about this 
+rationale.. This feature will be removed in a future release. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+[DEPRECATION WARNING]: azure_rm_publicipaddress_facts is kept for backwards compatibility but
+ usage is discouraged. The module documentation details page may explain more about this 
+rationale.. This feature will be removed in a future release. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+
+PLAY [for azure_rm_dnszone playbook test] ****************************************************
+
+TASK [Gathering Facts] ***********************************************************************
+ok: [127.0.0.1]
+
+TASK [create resource group] *****************************************************************
+ok: [127.0.0.1]
+
+TASK [include_tasks] *************************************************************************
+included: /home/fred/task/shenjie/test/azure_rm_virtualmachine/tasks/setup.yml for 127.0.0.1
+
+TASK [debug] *********************************************************************************
+ok: [127.0.0.1] => {
+    "msg": "UID is 7"
+}
+
+TASK [SETUP | Create storage account] ********************************************************
+ok: [127.0.0.1]
+
+TASK [SETUP | Create availability set] *******************************************************
+ok: [127.0.0.1]
+
+TASK [SETUP | Create virtual network] ********************************************************
+ok: [127.0.0.1]
+
+TASK [SETUP | Create subnet] *****************************************************************
+ok: [127.0.0.1]
+
+TASK [Create public ip] **********************************************************************
+ok: [127.0.0.1]
+
+TASK [Create security group] *****************************************************************
+changed: [127.0.0.1]
+
+TASK [Create network interface] **************************************************************
+[DEPRECATION WARNING]: Setting ip_configuration flatten is deprecated and will be removed. 
+Using ip_configurations list to define the ip configuration. This feature will be removed in 
+version 2.9. Deprecation warnings can be disabled by setting deprecation_warnings=False in 
+ansible.cfg.
+ok: [127.0.0.1]
+
+TASK [Create virtual machine with a single NIC and no boot diagnostics] **********************
+ok: [127.0.0.1]
+
+TASK [Ensure VM was created properly] ********************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Get facts for virtual machine without boot diagnostics disabled] ***********************
+[DEPRECATION WARNING]: The 'azure_rm_virtualmachine_facts' module has been renamed to 
+'azure_rm_virtualmachine_info'. This feature will be removed in version 2.13. Deprecation 
+warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+ok: [127.0.0.1]
+
+TASK [Ensure VM facts are correct] ***********************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Enable boot diagnostics on an existing VM for the first time without specifying a storage account] ***
+changed: [127.0.0.1]
+
+TASK [Ensure VM properties are correct] ******************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Get facts for virtual machine with boot diagnostics enabled] ***************************
+ok: [127.0.0.1]
+
+TASK [Ensure VM facts were returned] *********************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Change the boot diagnostics storage account while enabled] *****************************
+changed: [127.0.0.1]
+
+TASK [Disable boot diagnostics and change the storage account at the same time] **************
+changed: [127.0.0.1]
+
+TASK [Ensure boot diagnostics was disabled] **************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Re-enable boot diagnostics on an existing VM where it was previously configured] *******
+changed: [127.0.0.1]
+
+TASK [Ensure boot diagnostics was reenabled] *************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Should be idempotent with a single NIC] ************************************************
+ok: [127.0.0.1]
+
+TASK [Ensure nothing changed] ****************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Resize VM] *****************************************************************************
+changed: [127.0.0.1]
+
+TASK [Esure VM was resized] ******************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Delete VM] *****************************************************************************
+changed: [127.0.0.1]
+
+TASK [NIC should be gone] ********************************************************************
+[DEPRECATION WARNING]: The 'azure_rm_networkinterface_facts' module has been renamed to 
+'azure_rm_networkinterface_info'. This feature will be removed in version 2.13. Deprecation 
+warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+ok: [127.0.0.1]
+
+TASK [Ensure NIC was removed] ****************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Public IP should be gone] **************************************************************
+[DEPRECATION WARNING]: The 'azure_rm_publicipaddress_facts' module has been renamed to 
+'azure_rm_publicipaddress_info'. This feature will be removed in version 2.13. Deprecation 
+warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+ok: [127.0.0.1]
+
+TASK [Ensure public IP was removed] **********************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Destroy NIC] ***************************************************************************
+ok: [127.0.0.1]
+
+TASK [Destroy security group] ****************************************************************
+changed: [127.0.0.1]
+
+TASK [Destroy subnet] ************************************************************************
+changed: [127.0.0.1]
+
+TASK [Destroy virtual network] ***************************************************************
+changed: [127.0.0.1]
+
+TASK [Destroy public ip] *********************************************************************
+ok: [127.0.0.1]
+
+TASK [Destroy availability set] **************************************************************
+changed: [127.0.0.1]
+
+TASK [Destroy storage account] ***************************************************************
+changed: [127.0.0.1]
+
+PLAY RECAP ***********************************************************************************
+127.0.0.1                  : ok=40   changed=12   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0  

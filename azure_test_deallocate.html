@@ -1,0 +1,85 @@
+fred@fred-Virtual-Machine:~/task/shenjie/test/azure_rm_virtualmachine/tasks$ ansible-playbook  task1.yml 
+ [WARNING]: Skipping plugin (/usr/local/lib/python2.7/dist-
+packages/ansible/plugins/connection/accelerate.py) as it seems to be invalid: cannot import
+name key_for_hostname
+
+ [WARNING]: While constructing a mapping from
+/home/fred/task/shenjie/test/azure_rm_virtualmachine/tasks/var.yml, line 1, column 1, found a
+duplicate dict key (resource_group_secondary). Using last defined value only.
+
+
+PLAY [for azure_rm_dnszone playbook test] ****************************************************
+
+TASK [Gathering Facts] ***********************************************************************
+ok: [127.0.0.1]
+
+TASK [create resource group] *****************************************************************
+changed: [127.0.0.1]
+
+TASK [include_tasks] *************************************************************************
+included: /home/fred/task/shenjie/test/azure_rm_virtualmachine/tasks/setup.yml for 127.0.0.1
+
+TASK [debug] *********************************************************************************
+ok: [127.0.0.1] => {
+    "msg": "UID is 7"
+}
+
+TASK [SETUP | Create storage account] ********************************************************
+changed: [127.0.0.1]
+
+TASK [SETUP | Create availability set] *******************************************************
+changed: [127.0.0.1]
+
+TASK [SETUP | Create virtual network] ********************************************************
+changed: [127.0.0.1]
+
+TASK [SETUP | Create subnet] *****************************************************************
+changed: [127.0.0.1]
+
+TASK [Create minimal VM with defaults] *******************************************************
+changed: [127.0.0.1]
+
+TASK [Restart the virtual machine] ***********************************************************
+changed: [127.0.0.1]
+
+TASK [Ensue VM was restarted] ****************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Deallocate the virtual machine] ********************************************************
+changed: [127.0.0.1]
+
+TASK [Ensure VM was deallocated] *************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Start the virtual machine] *************************************************************
+changed: [127.0.0.1]
+
+TASK [Ensure VM was started] *****************************************************************
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [Delete VM] *****************************************************************************
+changed: [127.0.0.1]
+
+TASK [Destroy subnet] ************************************************************************
+changed: [127.0.0.1]
+
+TASK [Destroy virtual network] ***************************************************************
+changed: [127.0.0.1]
+
+TASK [Destroy availability set] **************************************************************
+changed: [127.0.0.1]
+
+TASK [Destroy storage account] ***************************************************************
+changed: [127.0.0.1]
+
+PLAY RECAP ***********************************************************************************
+127.0.0.1                  : ok=20   changed=14   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0 
