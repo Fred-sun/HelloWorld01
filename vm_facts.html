@@ -1,0 +1,72 @@
+
+TASK [Get facts for virtual machine without boot diagnostics disabled] ***********************************************************************************************
+task path: /home/fred/task/shenjie/test/azure_rm_virtualmachine/tasks/azure_test_public_ip.yml:72
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: fred
+<127.0.0.1> EXEC /bin/sh -c 'echo ~fred && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/fred/.ansible/tmp/ansible-tmp-1569570476.77-133604749249969 `" && echo ansible-tmp-1569570476.77-133604749249969="` echo /home/fred/.ansible/tmp/ansible-tmp-1569570476.77-133604749249969 `" ) && sleep 0'
+Using module file /usr/local/lib/python2.7/dist-packages/ansible/modules/cloud/azure/azure_rm_virtualmachine_facts.py
+<127.0.0.1> PUT /home/fred/.ansible/tmp/ansible-local-23818GTOggy/tmpCkyPI6 TO /home/fred/.ansible/tmp/ansible-tmp-1569570476.77-133604749249969/AnsiballZ_azure_rm_virtualmachine_facts.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/fred/.ansible/tmp/ansible-tmp-1569570476.77-133604749249969/ /home/fred/.ansible/tmp/ansible-tmp-1569570476.77-133604749249969/AnsiballZ_azure_rm_virtualmachine_facts.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /home/fred/.ansible/tmp/ansible-tmp-1569570476.77-133604749249969/AnsiballZ_azure_rm_virtualmachine_facts.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/fred/.ansible/tmp/ansible-tmp-1569570476.77-133604749249969/ > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "ad_user": null,
+            "adfs_authority_url": null,
+            "api_profile": "latest",
+            "auth_source": null,
+            "cert_validation_mode": null,
+            "client_id": null,
+            "cloud_environment": "AzureCloud",
+            "name": "fredvm01",
+            "password": null,
+            "profile": null,
+            "resource_group": "v-xisuRG08",
+            "secret": null,
+            "subscription_id": null,
+            "tags": null,
+            "tenant": null
+        }
+    },
+    "vms": [
+        {
+            "admin_username": "adminuser",
+            "data_disks": [],
+            "id": "/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisuRG08/providers/Microsoft.Compute/virtualMachines/fredvm01",
+            "image": {
+                "offer": "UbuntuServer",
+                "publisher": "Canonical",
+                "sku": "16.04-LTS",
+                "version": "16.04.201909091"
+            },
+            "location": "eastus",
+            "name": "fredvm01",
+            "network_interface_names": [
+                "fredinterface001"
+            ],
+            "os_disk_caching": "ReadOnly",
+            "os_type": "Linux",
+            "power_state": "running",
+            "resource_group": "v-xisuRG08",
+            "state": "present",
+            "storage_account_name": "fredstorage001",
+            "storage_blob_name": "fredvm01.vhd",
+            "storage_container_name": "fredvm01",
+            "tags": null,
+            "vm_size": "Standard_A0"
+        }
+    ]
+}
+Read vars_file './var.yml'
+
+TASK [Ensure VM facts are correct] ***********************************************************************************************************************************
+task path: /home/fred/task/shenjie/test/azure_rm_virtualmachine/tasks/azure_test_public_ip.yml:78
+fatal: [127.0.0.1]: FAILED! => {
+    "msg": "The conditional check 'not vm_facts_no_boot_diag_result.vms[0].boot_diagnostics.enabled' failed. The error was: error while evaluating conditional (not vm_facts_no_boot_diag_result.vms[0].boot_diagnostics.enabled): 'dict object' has no attribute 'boot_diagnostics'"
+}
+
+PLAY RECAP ***********************************************************************************************************************************************************
+127.0.0.1                  : ok=14   changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
+
