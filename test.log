@@ -1,0 +1,52 @@
+K [Create instance of DevTest Lab Environment] ****************************************************************
+task path: /home/fred/ansible_testing/main.yml:660
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: fred
+<127.0.0.1> EXEC /bin/sh -c 'echo ~fred && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/fred/.ansible/tmp/ansible-tmp-1571910648.51-2501                       08908410551 `" && echo ansible-tmp-1571910648.51-250108908410551="` echo /home/fred/.ansible/tmp/ansible-tmp-15719                       10648.51-250108908410551 `" ) && sleep 0'
+Using module file /usr/local/lib/python2.7/dist-packages/ansible/modules/cloud/azure/azure_rm_devtestlabenvironmen                       t.py
+<127.0.0.1> PUT /home/fred/.ansible/tmp/ansible-local-12254T1BU_U/tmp0XUSVf TO /home/fred/.ansible/tmp/ansible-tmp                       -1571910648.51-250108908410551/AnsiballZ_azure_rm_devtestlabenvironment.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/fred/.ansible/tmp/ansible-tmp-1571910648.51-250108908410551/ /home/fr                       ed/.ansible/tmp/ansible-tmp-1571910648.51-250108908410551/AnsiballZ_azure_rm_devtestlabenvironment.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /home/fred/.ansible/tmp/ansible-tmp-1571910648.51-250108908410551/Ans                       iballZ_azure_rm_devtestlabenvironment.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/fred/.ansible/tmp/ansible-tmp-1571910648.51-250108908410551/ > /dev/nu                       ll 2>&1 && sleep 0'
+The full traceback is:
+WARNING: The below traceback may *not* be related to the actual failure.
+  File "/tmp/ansible_azure_rm_devtestlabenvironment_payload_gnOtWP/__main__.py", line 273, in create_update_enviro                       nment
+    dtl_environment=self.dtl_environment)
+  File "/usr/local/lib/python2.7/dist-packages/azure/mgmt/devtestlabs/operations/environments_operations.py", line                        299, in create_or_update
+    **operation_config
+  File "/usr/local/lib/python2.7/dist-packages/azure/mgmt/devtestlabs/operations/environments_operations.py", line                        247, in _create_or_update_initial
+    raise exp
+
+fatal: [127.0.0.1]: FAILED! => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "ad_user": null,
+            "adfs_authority_url": null,
+            "api_profile": "latest",
+            "append_tags": true,
+            "auth_source": null,
+            "cert_validation_mode": null,
+            "client_id": null,
+            "cloud_environment": "AzureCloud",
+            "deployment_parameters": null,
+            "deployment_template": "/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourcegroups/v-xisurg/pr                       oviders/microsoft.devtestlab/labs/labb57dc95265/artifactSources/public environment repo/armTemplates/WebApp",
+            "lab_name": "labb57dc95265",
+            "location": "eastus",
+            "name": "myEnvironment",
+            "password": null,
+            "profile": null,
+            "resource_group": "v-xisuRG",
+            "secret": null,
+            "state": "present",
+            "subscription_id": null,
+            "tags": null,
+            "tenant": null,
+            "user_name": "@me"
+        }
+    },
+    "msg": "Error creating the Environment instance: Azure Error: EnvironmentCreationNotAllowedForDisabledSource\n                       Message: Unable to create environment 'myEnvironment' using template from disabled source 'Public Environment Repo                       '."
+}
+
+PLAY RECAP *******************************************************************************************************
+127.0.0.1                  : ok=79   changed=16   unreachable=0    failed=1    skipped=1    rescued=0    ignored=0  
