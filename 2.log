@@ -1,196 +1,25 @@
-azure_rm_acs
-azure_rm_aks
-azure_rm_aks_facts
-azure_rm_aksversion_facts
-azure_rm_appgateway
-azure_rm_applicationsecuritygroup
-azure_rm_applicationsecuritygroup_facts
-azure_rm_appserviceplan
-azure_rm_appserviceplan_facts
-azure_rm_autoscale
-azure_rm_autoscale_facts
-azure_rm_availabilityset
-azure_rm_availabilityset_facts
-azure_rm_cdnendpoint
-azure_rm_cdnendpoint_facts
-azure_rm_cdnprofile
-azure_rm_cdnprofile_facts
-azure_rm_containerinstance
-azure_rm_containerinstance_facts
-azure_rm_containerregistry
-azure_rm_containerregistry_facts
-azure_rm_cosmosdbaccount
-azure_rm_cosmosdbaccount_facts
-azure_rm_deployment
-azure_rm_deployment_facts
-azure_rm_devtestlab
-azure_rm_devtestlab_facts
-azure_rm_devtestlabarmtemplate_facts
-azure_rm_devtestlabartifact_facts
-azure_rm_devtestlabartifactsource
-azure_rm_devtestlabartifactsource_facts
-azure_rm_devtestlabcustomimage
-azure_rm_devtestlabcustomimage_facts
-azure_rm_devtestlabenvironment
-azure_rm_devtestlabenvironment_facts
-azure_rm_devtestlabpolicy
-azure_rm_devtestlabpolicy_facts
-azure_rm_devtestlabschedule
-azure_rm_devtestlabschedule_facts
-azure_rm_devtestlabvirtualmachine
-azure_rm_devtestlabvirtualmachine_facts
-azure_rm_devtestlabvirtualnetwork
-azure_rm_devtestlabvirtualnetwork_facts
-azure_rm_dnsrecordset
-azure_rm_dnsrecordset_facts
-azure_rm_dnszone
-azure_rm_dnszone_facts
-azure_rm_functionapp
-azure_rm_functionapp_facts
-azure_rm_hdinsightcluster
-azure_rm_hdinsightcluster_facts
-azure_rm_devtestlabartifact_facts
-azure_rm_devtestlabartifactsource
-azure_rm_devtestlabartifactsource_facts
-azure_rm_devtestlabcustomimage
-azure_rm_devtestlabcustomimage_facts
-azure_rm_devtestlabenvironment
-azure_rm_devtestlabenvironment_facts
-azure_rm_devtestlabpolicy
-azure_rm_devtestlabpolicy_facts
-azure_rm_devtestlabschedule
-azure_rm_devtestlabschedule_facts
-azure_rm_devtestlabvirtualmachine
-azure_rm_devtestlabvirtualmachine_facts
-azure_rm_devtestlabvirtualnetwork
-azure_rm_devtestlabvirtualnetwork_facts
-azure_rm_dnsrecordset
-azure_rm_dnsrecordset_facts
-azure_rm_dnszone
-azure_rm_dnszone_facts
-azure_rm_functionapp
-azure_rm_functionapp_facts
-azure_rm_hdinsightcluster
-azure_rm_hdinsightcluster_facts
-azure_rm_devtestlabartifact_facts
-azure_rm_devtestlabartifactsource
-azure_rm_devtestlabartifactsource_facts
-azure_rm_devtestlabcustomimage
-azure_rm_devtestlabcustomimage_facts
-azure_rm_devtestlabenvironment
-azure_rm_devtestlabenvironment_facts
-azure_rm_devtestlabpolicy
-azure_rm_devtestlabpolicy_facts
-azure_rm_devtestlabschedule
-azure_rm_devtestlabschedule_facts
-azure_rm_devtestlabvirtualmachine
-azure_rm_devtestlabvirtualmachine_facts
-azure_rm_devtestlabvirtualnetwork
-azure_rm_devtestlabvirtualnetwork_facts
-azure_rm_dnsrecordset
-azure_rm_dnsrecordset_facts
-azure_rm_dnszone
-azure_rm_dnszone_facts
-azure_rm_functionapp
-azure_rm_functionapp_facts
-azure_rm_hdinsightcluster
-azure_rm_hdinsightcluster_facts
-azure_rm_image
-azure_rm_image_facts
-azure_rm_keyvault
-azure_rm_keyvaultkey
-azure_rm_keyvaultsecret
-azure_rm_loadbalancer
-azure_rm_loadbalancer_facts
-azure_rm_loganalyticsworkspace
-azure_rm_loganalyticsworkspace_facts
-azure_rm_managed_disk
-azure_rm_managed_disk_facts
-azure_rm_manageddisk
-azure_rm_manageddisk_facts
-azure_rm_mariadbconfiguration
-azure_rm_mariadbconfiguration_facts
-azure_rm_mariadbdatabase
-azure_rm_mariadbdatabase_facts
-azure_rm_mariadbfirewallrule
-azure_rm_mariadbfirewallrule_facts
-azure_rm_mariadbserver
-azure_rm_mariadbserver_facts
-azure_rm_mysqlconfiguration
-azure_rm_mysqlconfiguration_facts
-azure_rm_mysqldatabase
-azure_rm_mysqldatabase_facts
-azure_rm_mysqlfirewallrule
-azure_rm_mysqlfirewallrule_facts
-azure_rm_mysqlserver
-azure_rm_mysqlserver_facts
-azure_rm_networkinterface
-azure_rm_networkinterface_facts
-azure_rm_postgresqlconfiguration
-azure_rm_postgresqlconfiguration_facts
-azure_rm_postgresqldatabase
-azure_rm_postgresqldatabase_facts
-azure_rm_postgresqlfirewallrule
-azure_rm_postgresqlfirewallrule_facts
-azure_rm_postgresqlserver
-azure_rm_postgresqlserver_facts
-azure_rm_publicipaddress
-azure_rm_publicipaddress_facts
-azure_rm_rediscache
-azure_rm_rediscache_facts
-azure_rm_rediscachefirewallrule
-azure_rm_resource
-azure_rm_resource_facts
-azure_rm_resourcegroup
-azure_rm_resourcegroup_facts
-azure_rm_roleassignment
-azure_rm_roleassignment_facts
-azure_rm_roledefinition
-azure_rm_roledefinition_facts
-azure_rm_route
-azure_rm_routetable
-azure_rm_routetable_facts
-azure_rm_securitygroup
-azure_rm_securitygroup_facts
-azure_rm_servicebus
-azure_rm_servicebus_facts
-azure_rm_servicebusqueue
-azure_rm_servicebussaspolicy
-azure_rm_servicebustopic
-azure_rm_servicebustopicsubscription
-azure_rm_sqldatabase
-azure_rm_sqldatabase_facts
-azure_rm_sqlfirewallrule
-azure_rm_sqlfirewallrule_facts
-azure_rm_sqlserver
-azure_rm_sqlserver_facts
-azure_rm_storageaccount
-azure_rm_storageaccount_facts
-azure_rm_storageblob
-azure_rm_subnet
-azure_rm_subnet_facts
-azure_rm_trafficmanagerendpoint
-azure_rm_trafficmanagerendpoint_facts
-azure_rm_trafficmanagerprofile
-azure_rm_trafficmanagerprofile_facts
-azure_rm_virtualmachine
-azure_rm_virtualmachine_extension
-azure_rm_virtualmachine_facts
-azure_rm_virtualmachine_scaleset
-azure_rm_virtualmachine_scaleset_facts
-azure_rm_virtualmachineextension
-azure_rm_virtualmachineextension_facts
-azure_rm_virtualmachineimage_facts
-azure_rm_virtualmachinescaleset
-azure_rm_virtualmachinescaleset_facts
-azure_rm_virtualmachinescalesetextension
-azure_rm_virtualmachinescalesetextension_facts
-azure_rm_virtualmachinescalesetinstance
-azure_rm_virtualmachinescalesetinstance_facts
-azure_rm_virtualnetwork
-azure_rm_virtualnetwork_facts
-azure_rm_virtualnetworkgateway
-azure_rm_virtualnetworkpeering
-azure_rm_virtualnetworkpeering_facts
-azure_rm_webapp
-azure_rm_webapp_facts
+TASK [debug] *******************************************************************
+ok: [127.0.0.1] => {
+    "output": {
+        "changed": false, 
+        "failed": false, 
+        "publicipaddresses": [
+            {
+                "allocation_method": "dynamic", 
+                "dns_settings": {}, 
+                "etag": "W/\"ca361ee2-1fd8-4d5a-897d-9bcafea05d77\"", 
+                "id": "/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourceGroups/v-xisuRG/providers/Microsoft.Network/publicIPAddresses/myVM-ip", 
+                "idle_timeout": 4, 
+                "ip_address": "13.90.250.114", 
+                "ip_tags": {}, 
+                "location": "eastus", 
+                "name": "myVM-ip", 
+                "provisioning_state": "Succeeded", 
+                "sku": "Basic", 
+                "tags": null, 
+                "type": "Microsoft.Network/publicIPAddresses", 
+                "version": "ipv4"
+            }
+        ]
+    }
+}
