@@ -1,0 +1,34 @@
+fred@fred-Virtual-Machine:~/task/test$ ansible-playbook  -i ./hosts test.yml -vvvv
+ansible-playbook 2.9.1
+  config file = None
+    configured module search path = [u'/home/fred/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+      ansible python module location = /usr/local/lib/python2.7/dist-packages/ansible
+        executable location = /usr/local/bin/ansible-playbook
+          python version = 2.7.12 (default, Oct  8 2019, 14:14:10) [GCC 5.4.0 20160609]
+          No config file found; using defaults
+          setting up inventory plugins
+          host_list declined parsing /home/fred/task/test/hosts as it did not pass its verify_file() method
+          script declined parsing /home/fred/task/test/hosts as it did not pass its verify_file() method
+          auto declined parsing /home/fred/task/test/hosts as it did not pass its verify_file() method
+          Parsed /home/fred/task/test/hosts inventory source with ini plugin
+          [WARNING]: provided hosts list is empty, only localhost is available. Note that
+          the implicit localhost does not match 'all'
+
+          Loading callback plugin default of type stdout, v2.0 from /usr/local/lib/python2.7/dist-packages/ansible/plugins/callback/default.pyc
+
+          PLAYBOOK: test.yml *************************************************************
+          Positional arguments: test.yml
+          become_method: sudo
+          inventory: (u'/home/fred/task/test/hosts',)
+          forks: 5
+          tags: (u'all',)
+          verbosity: 4
+          connection: smart
+          timeout: 10
+          1 plays in test.yml
+
+          PLAY [Run whoami] **************************************************************
+          skipping: no hosts matched
+
+          PLAY RECAP *********************************************************************
+

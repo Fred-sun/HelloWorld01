@@ -1,0 +1,6 @@
+[test02]
+157.56.177.15 ansible_user=azureuser ansible_ssh_pass=Password@0329
+
+[test03]
+127.0.0.1
+40.76.21.19 ansible_user=azureuser ansible_ssh_pass=Password@0329
