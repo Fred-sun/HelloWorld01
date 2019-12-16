@@ -1,52 +1,109 @@
-K [Create instance of DevTest Lab Environment] ****************************************************************
-task path: /home/fred/ansible_testing/main.yml:660
+TASK [for test] ************************************************************************************************
+task path: /home/fred/task/azure_338/tasks.yml:22
 <127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: fred
-<127.0.0.1> EXEC /bin/sh -c 'echo ~fred && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/fred/.ansible/tmp/ansible-tmp-1571910648.51-2501                       08908410551 `" && echo ansible-tmp-1571910648.51-250108908410551="` echo /home/fred/.ansible/tmp/ansible-tmp-15719                       10648.51-250108908410551 `" ) && sleep 0'
-Using module file /usr/local/lib/python2.7/dist-packages/ansible/modules/cloud/azure/azure_rm_devtestlabenvironmen                       t.py
-<127.0.0.1> PUT /home/fred/.ansible/tmp/ansible-local-12254T1BU_U/tmp0XUSVf TO /home/fred/.ansible/tmp/ansible-tmp                       -1571910648.51-250108908410551/AnsiballZ_azure_rm_devtestlabenvironment.py
-<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/fred/.ansible/tmp/ansible-tmp-1571910648.51-250108908410551/ /home/fr                       ed/.ansible/tmp/ansible-tmp-1571910648.51-250108908410551/AnsiballZ_azure_rm_devtestlabenvironment.py && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /home/fred/.ansible/tmp/ansible-tmp-1571910648.51-250108908410551/Ans                       iballZ_azure_rm_devtestlabenvironment.py && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/fred/.ansible/tmp/ansible-tmp-1571910648.51-250108908410551/ > /dev/nu                       ll 2>&1 && sleep 0'
-The full traceback is:
-WARNING: The below traceback may *not* be related to the actual failure.
-  File "/tmp/ansible_azure_rm_devtestlabenvironment_payload_gnOtWP/__main__.py", line 273, in create_update_enviro                       nment
-    dtl_environment=self.dtl_environment)
-  File "/usr/local/lib/python2.7/dist-packages/azure/mgmt/devtestlabs/operations/environments_operations.py", line                        299, in create_or_update
-    **operation_config
-  File "/usr/local/lib/python2.7/dist-packages/azure/mgmt/devtestlabs/operations/environments_operations.py", line                        247, in _create_or_update_initial
-    raise exp
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1576463885.19-278245734078679 `" && echo ansible-tmp-1576463885.19-278245734078679="` echo $HOME/.ansible/tmp/ansible-tmp-1576463885.19-278245734078679 `" ) && sleep 0'
+Using module file /usr/local/lib/python2.7/dist-packages/ansible/modules/cloud/azure_rm_aks.py
+<127.0.0.1> PUT /home/fred/.ansible/tmp/ansible-local-5626ikVeve/tmptmG0Y2 TO /home/fred/.ansible/tmp/ansible-tmp-1576463885.19-278245734078679/AnsiballZ_azure_rm_aks.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/fred/.ansible/tmp/ansible-tmp-1576463885.19-278245734078679/ /home/fred/.ansible/tmp/ansible-tmp-1576463885.19-278245734078679/AnsiballZ_azure_rm_aks.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /home/fred/.ansible/tmp/ansible-tmp-1576463885.19-278245734078679/AnsiballZ_azure_rm_aks.py && sleep 0'
 
-fatal: [127.0.0.1]: FAILED! => {
-    "changed": false,
+<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/fred/.ansible/tmp/ansible-tmp-1576463885.19-278245734078679/ > /dev/null 2>&1 && sleep 0'
+[WARNING]: Azure API profile latest does not define an entry for ContainerServiceClient
+
+changed: [127.0.0.1] => {
+    "aad_profile": {}, 
+    "addon": {}, 
+    "agent_pool_profiles": [
+        {
+            "count": 1, 
+            "name": "default", 
+            "os_disk_size_gb": 100, 
+            "os_type": "Linux", 
+            "storage_profile": "ManagedDisks", 
+            "vm_size": "Standard_DS1_v2", 
+            "vnet_subnet_id": null
+        }
+    ], 
+    "changed": true, 
+    "dns_prefix": "fredaks01", 
+    "enable_rbac": true, 
+    "fqdn": "fredaks01-2a51dbb0.hcp.eastus.azmk8s.io", 
+    "id": "/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourcegroups/v-xisuRG02/providers/Microsoft.ContainerService/managedClusters/fredaks01", 
     "invocation": {
         "module_args": {
-            "ad_user": null,
-            "adfs_authority_url": null,
-            "api_profile": "latest",
-            "append_tags": true,
-            "auth_source": null,
-            "cert_validation_mode": null,
-            "client_id": null,
-            "cloud_environment": "AzureCloud",
-            "deployment_parameters": null,
-            "deployment_template": "/subscriptions/f64d4ee8-be94-457d-ba26-3fa6b6506cef/resourcegroups/v-xisurg/pr                       oviders/microsoft.devtestlab/labs/labb57dc95265/artifactSources/public environment repo/armTemplates/WebApp",
-            "lab_name": "labb57dc95265",
-            "location": "eastus",
-            "name": "myEnvironment",
-            "password": null,
-            "profile": null,
-            "resource_group": "v-xisuRG",
-            "secret": null,
-            "state": "present",
-            "subscription_id": null,
-            "tags": null,
-            "tenant": null,
-            "user_name": "@me"
+            "aad_profile": null, 
+            "ad_user": null, 
+            "addon": null, 
+            "adfs_authority_url": null, 
+            "agent_pool_profiles": [
+                {
+                    "count": 1, 
+                    "dns_prefix": null, 
+                    "name": "default", 
+                    "os_disk_size_gb": null, 
+                    "os_type": null, 
+                    "ports": null, 
+                    "storage_profiles": null, 
+                    "vm_size": "Standard_DS1_v2", 
+                    "vnet_subnet_id": null
+                }
+            ], 
+            "api_profile": "latest", 
+            "append_tags": true, 
+            "auth_source": null, 
+            "cert_validation_mode": null, 
+            "client_id": null, 
+            "cloud_environment": "AzureCloud", 
+            "dns_prefix": "fredaks01", 
+            "enable_rbac": true, 
+            "kubernetes_version": "1.14.8", 
+            "linux_profile": {
+                "admin_username": "azureuser", 
+                "ssh_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDSPmiqkvDH1/+MDAVDZT8381aYqp73Odz8cnD5hegNhqtXajqtiH0umVg7HybX3wt1HjcrwKJovZURcIbbcDvzdH2bnYbF93T4OLXA0bIfuIp6M86x1iutFtXdpN3TTicINrmSXEE2Ydm51iMu77B08ZERjVaToya2F7vC+egfoPvibf7OLxE336a5tPCywavvNihQjL8sjgpDT5AAScjb3YqK/6VLeQ18Ggt8/ufINsYkb+9/Ji/3OcGFeflnDXq80vPUyF3u4iIylob6RSZenC38cXmQB05tRNxS1B6BXCjMRdy0v4pa7oKM2GA4ADKpNrr0RI9ed+peRFwmsclH test@ansible"
+            }, 
+            "location": null, 
+            "name": "fredaks01", 
+            "network_profile": null, 
+            "password": null, 
+            "profile": null, 
+            "resource_group": "v-xisuRG02", 
+            "secret": null, 
+            "service_principal": {
+                "client_id": "ae12946a-f4de-4609-a5d1-68c36604f3b0", 
+                "client_secret": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER"
+            }, 
+            "state": "present", 
+            "subscription_id": null, 
+            "tags": {
+                "Environment": "test"
+            }, 
+            "tenant": null
         }
-    },
-    "msg": "Error creating the Environment instance: Azure Error: EnvironmentCreationNotAllowedForDisabledSource\n                       Message: Unable to create environment 'myEnvironment' using template from disabled source 'Public Environment Repo                       '."
+    }, 
+    "kube_config": "apiVersion: v1\nclusters:\n- cluster:\n    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUV5RENDQXJDZ0F3SUJBZ0lSQU01NDBsbkFiNWVYV0o4T3RSUGxROWd3RFFZSktvWklodmNOQVFFTEJRQXcKRFRFTE1Ba0dBMVVFQXhNQ1kyRXdIaGNOTVRreE1qRTJNREl5T0RJeldoY05ORGt4TWpBNE1ESXpPREl6V2pBTgpNUXN3Q1FZRFZRUURFd0pqWVRDQ0FpSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnSVBBRENDQWdvQ2dnSUJBTTB3CkM0WElnOVNJSWRCRTJic1BHS1hGdGxqand5T1hpOXdMakptTGlmRjJmTnNLZnJJMk1BMGV6S3pEcWRlN0t4bWMKbGE2OGRYT0hDbUxZUUlUcmVUSFYxSDNrYi9YM1pWZzJxM0drQmhVZUFOWmpTU0dWQU5PRFVvWUZIcXNIOVlKbwpGc1lrZVRremx6R0lXSWtoSTFTVkNzelFOV0tqU3A1WDBWOTJFd29LVUdhMUVzUGNIYlE0bFoxcVZkNVlnbUdMCjN5REowZlNrRXJqMUhibzNZQVRtTmVRYStqSTc5R1BYd1hDSjF3c1hRbUtaQ0o1MDAvb2lYVFZHQWphMktBd2cKNkloUkdBTzlNWjg2Y3Y5ODQ2bk5PMy9rODNVZUI3c2JyWk5GL0xha3dSWk1ORVJvVkYrRGFyeVhvSFM3SG9FRApmUWVER0pqVjJ1dStHdUhUcjVOVmVQMUdEZFVyYnEzcW1NdW8zWDRZOHNwVUdBTFAzcy83dEVIS2JnSExpaEpICmc4ZnhHZ2MyZVZ2MStSb3RML2JsSmE2Rk9oTGpjb2daTnNQakJjQ2VKTzk2cWtGOGxCQ1NnZXU5cmVtcFprdWMKY2kwS2c2T284WXFTVGw1MStZbTFyaFdWUmdOS1hzaU1iV3NTclVFS1RySzc0emJaRXc1QTNGSThaRHpFR2s3eAp5NmFlMWF4dHpMRjVDdUhxajdDbTdwaDRNc205SndKT25uYi8zdXdqVCtRWGdHMEZYRUI4SWxxcktPWlE4VTFPCkVGRkU3czI0QXo5OHQ4RUg0bDl4MWN3OUhqRFFaTlQ0NGxqY3lBUjR3cjlyTVBOaGM1bmE1SndXdmRvQ21ITkcKQkRzWkcyVk1aU3pBaU5RdUdHK2VPOEVBVkRhZm9obUIzMkZkYjRjeEFnTUJBQUdqSXpBaE1BNEdBMVVkRHdFQgovd1FFQXdJQ3BEQVBCZ05WSFJNQkFmOEVCVEFEQVFIL01BMEdDU3FHU0liM0RRRUJDd1VBQTRJQ0FRQ1JRT2RkCkpZdUZOVnkvWUNzSHUxVGQ4Y2pObzQzd0YvOHNSaisyY0ZzUW9TTm00YUxWeTg1Sy9jNXRSWnpzVFdmSWo4MFQKaXN3cm4wNXlka3hqbnQya1gyeThpdUhhZ09HU2hTSjJPT3c5d2hEUnVaaGJCcG5xd2pNdGdEVnp4OXJib1ZsUwo3MG43cWVrWXl1VmtldjBsSU42QXBvM2d4dXhzT29ST1JCR01QS2hpcU1FOHhHYWhTenFQVTc4N25DTzRSeWlCCnV4dlR2MjRGdlBtYjJzZEp2WkRINXplNEdVZkRyb1pIRVN6Z09mcHpuTlVVcXZBcTNaWjBmZDFWOWZDMmxMNHQKbXRqOXRRV1lKODFsb2FwYUhJOW5ka2thU255c3lSN2FIa214MnVad0RPZ3hJVzlVbEJDbUpFMzJwYnlmVXI2bwpoME1kRCtNemhIdE5IdTQvSG5hdnNWbWMwb0dTL3JWYm55Mzg4cmczSDlMNzlwM0FLSGVCaHJJQ2ZHMUNyK2FnCklUeWEvUmhPYkdNd3c2WVZydGtLdUtIenNXODdDQXZDN1pKQVdyVHZENmhPVG04ZjBWUUZobFV2ZFFlMGFQQXQKNlJrNFgyeWdhZmFQd0VNWTZseUlqR1hFYUNuWW5EVDVJbUEyVFlpZWVVUjlpWU8wTHJaTDRveE0wWCs1aklVTwpoSk9zblNWaHlpVVJMZ0tWV1FQNTViY2NrbStKUm1oVXBkN1R0YnkrZHlaNXk4WWlna1hxUFVkeWh2V0pWOWJFCnpYWjdiRExyVCt2RW43OUR5cWpTMEN1aVhvVkRDSnE2YVRCcnBEMXRwRGs0aFlXcHAyZkZLMHhPUnZGWmVKc3oKUksyZWl0OFVWYmorNmluTEFVem15dUpWb0lmVkg0YmZuSi8vcUE9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==\n    server: https://fredaks01-2a51dbb0.hcp.eastus.azmk8s.io:443\n  name: fredaks01\ncontexts:\n- context:\n    cluster: fredaks01\n    user: clusterUser_v-xisuRG02_fredaks01\n  name: fredaks01\ncurrent-context: fredaks01\nkind: Config\npreferences: {}\nusers:\n- name: clusterUser_v-xisuRG02_fredaks01\n  user:\n    client-certificate-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUUvRENDQXVTZ0F3SUJBZ0lRUGlBNWFnUVJFT2ZtVFo5Z3VNUytrakFOQmdrcWhraUc5dzBCQVFzRkFEQU4KTVFzd0NRWURWUVFERXdKallUQWVGdzB4T1RFeU1UWXdNakk0TWpOYUZ3MHlNVEV5TVRVd01qTTRNak5hTURBeApGekFWQmdOVkJBb1REbk41YzNSbGJUcHRZWE4wWlhKek1SVXdFd1lEVlFRREV3eHRZWE4wWlhKamJHbGxiblF3CmdnSWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUNEd0F3Z2dJS0FvSUNBUUM0TDkrWi9oeFVHajlsYkw1dEhmSlYKM3JINHYvZlVpakpwZ2x5YnA5VWIwTmh1d2U3djBWQUlvaUZyNjBOYUJJamZlbmtZNnluMjRLT1BSeW82ODl0VQpQdDVWaFEwRFRuMGF1OGdnTFoyank2V3BSWmplV29rS3JCN1dxZ2I0Q3hhSVlzQm9sRTIvWHErRzhsaG1jMFUrCi9RQmlEL05KZWFUZ2VpYjRPZ2JSL2R5L3lCenorb1loOGx4NE41R044c0dURnFvZUk2TkQvNWhzRVAxRU9FdE4KVVRmQm5YTlpjZC9BTy9Bb0c1ZW0yR0EzaE5XR3pVeDRNSHdUZWFEQ2dIZm45L0Fucm5aQmQ4Vkd0SVZNeDFtSgovcDFCU05Lcm9pWXlQS016SFJWVkE1VFF6T0d2MXNqMGhtMnZIanBDTXNhcWpNRWNjWWthUFZtSnkvQ1pCVFBvCmVTc1orQ0tMMXRjdHppSGtyRkY5R1Jua3g0TjJnWnRFdUNjeFVaQVVQaGdVU3JHQnA0b3E1SlpPbXJOeVhQbmgKSHlldDBOY2lQeXo0WWhDeHFnanRXYlh2alI1eXlIeUFpblZ4RWtha3dBUFFhbk9KTWdrWVlkVENMa3lEQ2VCKwpscjlLYUVHSG4yNng5bWJhZzg5a3Q0RTJBYjFJWUdwWVdRMDhUbVovenZxek1QTEt3cDdCTUwrV0FUeHZGYXZPCnZNNzdaaSs1N25YOVdWUXp4UE1LbC9FU3I3LzZEVXdtS0lrcHBFczZ0WkJUYzAxOEdCZlFWK1hpQkhHcERVcWcKNmhTcmwyRWZWSCs3a2R3SFNhTjl2bjZDT1RGbzRlZ1EzUGZtQ2VJRFhxa2MvK1BCK2Npa1d6YndVNkZ1ZE9vSQpSMzRMSEhEa3RpMGRWSW9ETDRmTVhRSURBUUFCb3pVd016QU9CZ05WSFE4QkFmOEVCQU1DQmFBd0V3WURWUjBsCkJBd3dDZ1lJS3dZQkJRVUhBd0l3REFZRFZSMFRBUUgvQkFJd0FEQU5CZ2txaGtpRzl3MEJBUXNGQUFPQ0FnRUEKeExjRWdxc3QyYjIxeXZGV29TQ1FKWWtYTXR4SDRwaS9xcjFTMDdsVzR3OURzWjVhTmVMOG10bDU1K05SY3JPcQpaN3lXMjVOM0FodlpKUVdZSG9STUExaTlaOTcvWUl2WVFoQTZZeSsyQmtyTG1ONEptd3NsL3RkQUVzZnZsSlpFCk1sVExobUZaT0c3cEt4MHRNMXFlNDZVT1hzQ2d5bGdhNjI5djJiRitUZVNEVFJPWnhlMU1TblhZNnFQaXB4b1MKMjJhZzQ5SjgvNXhzQ2tIM1RqVTFYMkxDRDZEaEhiSmZ3T3hHLytjM1FJL3pMOHdDQ21DQzB6VjZ1ZVZZbTRNawpGMUJoampTTEUwMjB4R2FhTWQ3L2F6dGZEbzlBbjFsVXFRTnByVEk1dUV2K0pDZmtXeG1rMkRvWmhJeXp6R0F5CmZHZnkyY0Z1R2F5MWlob1Fod2wyQmN3ZDl0bm8yY0hIWVhTZEdsNEkyeEx6MzFIVjVqOENnTm53WHljY3ZWMHUKcldobVIzb1o5dHJSTGFCME1zUU95eW1sZ2VyUVNVZnlMNG52cWQ5R2RtaXQwcmhKaG9QSnhQQmtaWmpTMXpvcQpqQ1RMRGRiQ01PUER2R2k0aW5hNk1vZ0ZPOUs5NDJ5bjZzL0w5WDEwOEFOWml3dUtseGlBVGprVVc5bkkva2VPCmZkSkRtZnQ0SW4xYzh2VlFZZDBZbmpOLytCcnJPQ2ptZTdUQWJNUTZkaFRXRTBFZEZ4NFl3cmJtblN6QWlZaFUKbGlUZ2dKL1BIOEU4bXI2aWlqcjJDSURHOHJ4dDJ5MEVRYjY4eDRTTTZLTUYxQUxLQ2Y3bWJmVTN3eWczZ1pEMwpGc2R2eHdBU1dlU3Z4aTAzZDlBVmV1d2c5ZVJ1K2szeThERUlUdGFNMFRFPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==\n    client-key-data: LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlKS0FJQkFBS0NBZ0VBdUMvZm1mNGNWQm8vWld5K2JSM3lWZDZ4K0wvMzFJb3lhWUpjbTZmVkc5RFlic0h1Cjc5RlFDS0loYSt0RFdnU0kzM3A1R09zcDl1Q2pqMGNxT3ZQYlZEN2VWWVVOQTA1OUdydklJQzJkbzh1bHFVV1kKM2xxSkNxd2UxcW9HK0FzV2lHTEFhSlJOdjE2dmh2Sllabk5GUHYwQVlnL3pTWG1rNEhvbStEb0cwZjNjdjhnYwo4L3FHSWZKY2VEZVJqZkxCa3hhcUhpT2pRLytZYkJEOVJEaExUVkUzd1oxeldYSGZ3RHZ3S0J1WHB0aGdONFRWCmhzMU1lREI4RTNtZ3dvQjM1L2Z3SjY1MlFYZkZSclNGVE1kWmlmNmRRVWpTcTZJbU1qeWpNeDBWVlFPVTBNemgKcjliSTlJWnRyeDQ2UWpMR3FvekJISEdKR2oxWmljdndtUVV6NkhrckdmZ2lpOWJYTGM0aDVLeFJmUmtaNU1lRApkb0diUkxnbk1WR1FGRDRZRkVxeGdhZUtLdVNXVHBxemNsejU0UjhucmREWElqOHMrR0lRc2FvSTdWbTE3NDBlCmNzaDhnSXAxY1JKR3BNQUQwR3B6aVRJSkdHSFV3aTVNZ3duZ2ZwYS9TbWhCaDU5dXNmWm0yb1BQWkxlQk5nRzkKU0dCcVdGa05QRTVtZjg3NnN6RHl5c0tld1RDL2xnRThieFdyenJ6TysyWXZ1ZTUxL1ZsVU04VHpDcGZ4RXErLworZzFNSmlpSkthUkxPcldRVTNOTmZCZ1gwRmZsNGdSeHFRMUtvT29VcTVkaEgxUi91NUhjQjBtamZiNStnamt4CmFPSG9FTnozNWduaUExNnBIUC9qd2ZuSXBGczI4Rk9oYm5UcUNFZCtDeHh3NUxZdEhWU0tBeStIekYwQ0F3RUEKQVFLQ0FnQUhwOVcvYk5SNG1tNndKSWoxdUJ6dWZNY2c4N20xVjlrb2tZYVA0YlgxNWdSWTlpNmNRVEwyYU9iQwp1WkNmR1Rrbk1Ndi93U2FKWUdUcis2VkJ0Z2tUdzFreWJNbFJyZDE5VXZqS2Zacmp4LzhtdmdIUW5DcStDdEZ0ClVydmZhM2FRVEtwNnJrOWMrTzZLeVYvclFqZEttdkY5SWZTV3hUdVpLUHFkcnF2QjVxOWFPVk1hd1ByNlJqeVoKc3BXV05OVGU3RDQ5Nm5WS3lrRG5uUDBwN0wwVWhaK3ZxSCsyNUFqTTBMRDJ1YzdmM0hhRFdENFgwRWl4WmpLQwpETGdsM1hrZVp5dlFPbXduNUhhS3JjNHNsc3lkODd0TmoxMVNUUGNSZDN2QkVDQm0zRE0vU29URzdrS0VCMkpmCnVQM3E2bmxmZFdKQmNHYW1kSTVZTCtYY05sOGw1SFNmNlc0NHNPZGpNWUEvQkVkaGtaMXNpdUh4UVBEREY1a28KM24yd2ExWlhlbHI4clpPRVRQOEszSTl1T29DS3JKRW9neW4yY3Q4MExET0M5eVFJdnlDUGRoMjZjOEs2N3dvcQpjT1JudjFKNzJDTDUwUUtJNU1xd0NieldXeUlKdEd2MFFwWVBZV1E5SnJPZ2dxV0xWQnFTVXZmQU1aRTRtNG5wCjQ4N0RpSFdSK1BYTXdGMld2RTFZQjg3eVZoNUdYL1FFMXE2TVRvRHFuWlU2MzJ2UzQ2Z3hGSXpTQk1LS0l5dnoKM0xueVdXdHZNN2duV1hsWjZqWC9Mc0JRMXdCOWRMdS92eE03RDd0UnZXc2VhNWdLNHhRMHNtbnFmQVJOWlVTMgp5bW5RWUpNUndFb1ZCWDViMnNVUkIwajZPMXNuRWJ0dXJ6SEpIcTg3T09PWVZneTdBUUtDQVFFQTN4THJFaHR6CnFLQkVRbFVMRjZZeDN4L1JwazJZZ05hUU1mSmhXSllSblM0anRuS3htem1jNXZVY3dHcytreGdtK1pIa1hxVjcKKzh5Ty92WXhtb0FEL29tV1V6UDlEVFJxTExLdko5Q1JiWWEzMWJWR1d3VUI5SXl5OEVVZ21aNFREaE0rY0tKTQpnZC9QT3FsTGpuYjRLVzFFYVN3Rkpmb3R1OXNYeDZzUHZ3RnVvMWVBelpIY3FWcGltdVFSa2t3M1diSE1hUWZkCjF0ZlpyOURQWE1tSzBsem9HcUw2ak9CQXRiRzlQL3BDZm5YSHZvRnNtbkkxTEJCYWtpZXd1RUw0WDNyQ2FwYXEKOTQwRTliUGQ4YWs3UGhhaVRSNTlndVpLZlJXSWliQVZKdDVreEFPeGs3ZkdxVHQ1SGVvMjJVNU15Z1ZXWmp1WQpFeTQxYjFEeW1jaXBqUUtDQVFFQTAxK1NzeFFOWEhIc0dCSDRXMDNrZ2Q4dWl2eFd4eEJDOXBVQTMrejBuNGJQCkRwQWFEUXhXVG9PQ3RscThjT2VobTZPWUs2b3E0andKbFlHVWZLVWRzQUlBb2s4bkJscWhTaHdXTmNEU3NLSmoKNU95dy9ETGwveTFLbU9zdWtJMG1Ja1E2dDkrME5tZU5INmxWT3JKMWJCRVZpaFpxazJYUDhrclJxYUdQdG1iTwpwekMrU2Ntd0dUNXpNcENOSjVlT2lCcmFoNDBUb1JhMEo5WU5JZnpzZGZoM2syNVVyN3dTQmFFQmtVR2swakNxCm5HeEoreU00V0pPY3phOGhYdzRCaE5sbFZwMGt4Qm9MMzczS3U3MkEvSXM3Wm1DbVpZTDFOM1o0cGhzYys3SngKUHVYMG51TkExTnNuMjY3TjhaQTZGMXpaVGdqcFdhaWtPQWsxUlRNeUVRS0NBUUFLVG9GMThMYkRUOFJYbkQ1Swo5VzdRZEZQbmJ5WmdyWWswQlpMaDJPMHZhZlpVYzdBcEQ5eGovMmM0ckx2VGFBWkUrYXluZ3RYYnFIUGk2OVVXCjRsdE00MmFDcWFCRGYreDM3RG1UaVZ0dXlBNnVYUlhIRnRBa1VHdmtGZzJQaTNJdDhFMnVQcEZ5WHJqZ2FQb0kKdHc1NE80Z3hvOHNKR2lvS3gvQ3RWUVlCT1R1M2FFK1hMK29XR1FyOVJSUmF3aEs4bmk1bm0rbHdCOEVURW43QwpOcjJuUW91bXoyanNJV0JjQkw1TnVtNWdFV2tOTUVXb1RTYVB4cUdvcHhUUExxanpJR1RqTDlydVhTR2hpSkgwCm5IRVVTVTl1YUw0NzBoQVcvMnV6a09NcFRKVXpTVWhuSHRLYTl4aDlmVmpUYVg2NnhzeGJKTjI5NVNDcTUvNk4KaEd2eEFvSUJBSE9ZcEFEZHFZVHlKSnp4VHZLWUFhem80bXBPSUNNVGlKdVQxM3VlK2hVNFE0cUNVa3pxZjFURwo1VGhYSFJGZUMrcXpLQ2hSRXN6UTZxamh5ZFAwOU94cDIvRG4rcjZsMStsUXZQQyt1RHF6UkpCUXhXWFhiQ01HCm9QSktSQmYzcVhBNkFpYkc1NmFOTVFlc3NwaThPaTFVbG9RRFNGdTk1V0JyZklnWmZCL1R6NVp0dU5OZndyZTcKaUlLUnZUQjIyUk1rSkhqWE5YSDJtYVhqa1NFU1Vqc2VIRDc3cXNMRXh0SmZRQjB4V2pNOVBFRDVrK2dOVmVaVApMQURza3dLS0JWaWpENkd6cFFTOS9kcHAwREttSzZGeGY1VzRxNmQrWEI3dDRvTnM5b2ZNQ2RUTks5K3RCcXFpCkJBVkhid2Q1eWRzM0F2eURNU0xBY0xiWWlsS0M4aEVDZ2dFQkFNalVDckJsRUlUYVc3QWJGQUxlLzdjcUlkVkMKYkliTzBDcXRiQklJSUJRc2l2NXhlaXlWUnJYblJYOTRQbnV6LzJqQllSeklvc004L3hhQXlSK1R3VzcwTVRRMgovb0JjL2RWRUhDT0YrOHNJU2FZTkV5YlAwcFdYcWFwUDFGQ2FHLzhHcE8wa2djSjJITWg0UndFMEV6bWVLSXFaClYrN0IraDZyYi9yOWNkTkU4VnBjZks5N2Vvdit4eWEzTWYzaXZjUzJPcFVrTEpwY2U2V3I0WGNHV0Joa1k5VUMKdXl2ZUFFbGNIdE52N3JWT0xkblJKd2FFdlpkenVjS2E1dnZkeFlnZHRiNmxscUpvR1BFYWd2UCttUkZrOHE3awoxZ0lWS2VaaFdwK0pOa1lRckFGdi92YnhxNjNZdjlQMlc2WEpobzFKY21UU081YmM4cDNMcW5XeG5jZz0KLS0tLS1FTkQgUlNBIFBSSVZBVEUgS0VZLS0tLS0K\n    token: ba94656e81749627fb47950079bd89911823b8b0f3ca857da0a1d72c997529c62d020748cb05243fc4dee6a729b2478752eae77c168434dab696dbd3aa40b192\n", 
+    "kubernetes_version": "1.14.8", 
+    "linux_profile": {
+        "admin_username": "azureuser", 
+        "ssh_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDSPmiqkvDH1/+MDAVDZT8381aYqp73Odz8cnD5hegNhqtXajqtiH0umVg7HybX3wt1HjcrwKJovZURcIbbcDvzdH2bnYbF93T4OLXA0bIfuIp6M86x1iutFtXdpN3TTicINrmSXEE2Ydm51iMu77B08ZERjVaToya2F7vC+egfoPvibf7OLxE336a5tPCywavvNihQjL8sjgpDT5AAScjb3YqK/6VLeQ18Ggt8/ufINsYkb+9/Ji/3OcGFeflnDXq80vPUyF3u4iIylob6RSZenC38cXmQB05tRNxS1B6BXCjMRdy0v4pa7oKM2GA4ADKpNrr0RI9ed+peRFwmsclH test@ansible"
+    }, 
+    "location": "eastus", 
+    "name": "fredaks01", 
+    "network_profile": {
+        "dns_service_ip": "10.0.0.10", 
+        "docker_bridge_cidr": "172.17.0.1/16", 
+        "network_plugin": "kubenet", 
+        "network_policy": null, 
+        "pod_cidr": "10.244.0.0/16", 
+        "service_cidr": "10.0.0.0/16"
+    }, 
+    "node_resource_group": "MC_v-xisuRG02_fredaks01_eastus", 
+    "provisioning_state": "Succeeded", 
+    "service_principal_profile": {
+        "client_id": "ae12946a-f4de-4609-a5d1-68c36604f3b0"
+    }, 
+    "tags": {
+        "Environment": "test"
+    }, 
+    "type": "Microsoft.ContainerService/ManagedClusters"
 }
 
-PLAY RECAP *******************************************************************************************************
-127.0.0.1                  : ok=79   changed=16   unreachable=0    failed=1    skipped=1    rescued=0    ignored=0  
